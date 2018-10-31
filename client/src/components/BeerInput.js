@@ -52,7 +52,7 @@ export class BeerInput extends Component {
           <input
             type="text"
             onChange={(event) => this.handleOnChange(event)}
-            name="brewery"
+            name="breweryName"
             value={this.state.breweryName}
             placeholder="brewery" />
         </p>

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import authorsReducer from './reducers/authorsReducer';
-import booksReducer from './reducers/booksReducer';
+import breweriesReducer from './reducers/breweriesReducer';
+import beersReducer from './reducers/beersReducer';
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  books: booksReducer,
-  authors: authorsReducer
+  beers: beersReducer,
+  breweries: breweriesReducer
 })
 
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

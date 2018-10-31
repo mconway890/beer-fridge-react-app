@@ -31,33 +31,36 @@ export class BeerInput extends Component {
 
   render() {
     return(
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <p>
-          <input
-            type="text"
-            onChange={(event) => this.handleOnChange(event)}
-            name="name"
-            value={this.state.name}
-            placeholder="beer name" />
-        </p>
-        <p>
-          <input
-            type="text"
-            onChange={(event) => this.handleOnChange(event)}
-            name="style"
-            value={this.state.style}
-            placeholder="style" />
-        </p>
-        <p>
-          <input
-            type="text"
-            onChange={(event) => this.handleOnChange(event)}
-            name="breweryName"
-            value={this.state.breweryName}
-            placeholder="brewery" />
-        </p>
-        <input type="submit" />
-      </form>
+      <div>
+        <h2>Add New Beer</h2>
+        <form onSubmit={(event) => this.handleOnSubmit(event)}>
+          <p>
+            <input
+              type="text"
+              onChange={(event) => this.handleOnChange(event)}
+              name="name"
+              value={this.state.name}
+              placeholder="beer name" />
+          </p>
+          <p>
+            <input
+              type="text"
+              onChange={(event) => this.handleOnChange(event)}
+              name="style"
+              value={this.state.style}
+              placeholder="style" />
+          </p>
+          <p>
+            <input
+              type="text"
+              onChange={(event) => this.handleOnChange(event)}
+              name="breweryName"
+              value={this.state.breweryName}
+              placeholder="brewery" />
+          </p>
+          <input type="submit" />
+        </form>
+      </div>
     );
   }
 };

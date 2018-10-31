@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App.css';
 import { getBeers } from '../actions/beerActions';
+import BeerCard from '../components/BeerCard';
 
 class Beers extends Component {
 
@@ -10,7 +11,7 @@ class Beers extends Component {
   }
 
   render() {
-    const { recipes, match } = this.props;
+    const { beers, match } = this.props;
     const ratedBeers = beers.sort(function(a, b) {
             return b.upvotes - a.upvotes;
           })

@@ -11,3 +11,10 @@ export const removeBeer = id => {
     id
   };
 };
+
+export const upvoteBeer = beer => {
+  return {
+    type: 'UPVOTE_BEER',
+    beer
+  }
+}

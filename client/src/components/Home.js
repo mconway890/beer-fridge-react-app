@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LoginForm from '../components/LoginForm';
+import SignupForm from '../components/SignupForm';
 
 
 class Home extends Component {
@@ -13,9 +14,13 @@ class Home extends Component {
       <div>
         <h1>Beer Fridge</h1>
         <h1>
-          <pre>LoginForm</pre>
+          <pre>Login</pre>
         </h1>
         <LoginForm onSubmit={this.login} />
+        <h1>
+          <pre>Signup</pre>
+        </h1>
+        <SignupForm onSubmit={this.signup} />
       </div>
     );
   }

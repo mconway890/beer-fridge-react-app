@@ -3,23 +3,25 @@ import BreweryInput from './components/BreweryInput';
 import Breweries from './components/Breweries';
 import BeerInput from './components/BeerInput';
 import Beers from './components/Beers';
+import Home from './components/Home';
+import NavBar from './components/NavBar';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 
 
 export class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div>
-          <h2>Breweries</h2>
-          <BreweryInput />
-          <Breweries />
-        </div>
-        <div>
-          <h2>Beers</h2>
-          <BeerInput />
-          <Beers />
-        </div>
+      <Router>
+      <div>
+        <NavBar />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/beers" component={Beers} />
+        <Route exact path="/breweries" component={Breweries} />
       </div>
+      </Router>
     );
   }
 };

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
+import '../App.css'
 
 
 class Home extends Component {

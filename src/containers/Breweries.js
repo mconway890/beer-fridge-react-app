@@ -10,7 +10,7 @@ class Breweries extends Component {
   }
 
   render() {
-    const { breweries, match } = this.props;
+    const { breweries } = this.props;
     const ratedBreweries = breweries.sort(function(a, b) {
             return b.upvotes - a.upvotes;
           })
@@ -28,4 +28,4 @@ const mapStateToProps = state => {
   return { breweries: state.breweries }
 }
 
-export default connect(mapStateToProps)(Breweries);
+export default connect(mapStateToProps, getBreweries)(Breweries);

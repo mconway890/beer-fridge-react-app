@@ -28,4 +28,4 @@ const mapStateToProps = state => {
   return { breweries: state.breweries }
 }
 
-export default connect(mapStateToProps, getBreweries)(Breweries);
+export default connect(mapStateToProps, {getBreweries})(Breweries);

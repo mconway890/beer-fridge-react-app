@@ -5,7 +5,7 @@ export const addBeer = beer => {
   };
 };
 
-export const getBeers = beers => {
+export const setBeers = beers => {
   return {
     type: 'GET_BEERS',
     beers
@@ -23,5 +23,17 @@ export const upvoteBeer = beer => {
   return {
     type: 'UPVOTE_BEER',
     beer
+  }
+}
+
+const URL = process.env.REACT_APP_URL;
+
+export const getBeers = () => {
+  return dispatch => {
+    return fetch(`${URL}/beers`)
+    .then(res => res.json())
+    .then(beers => {
+      dispatch(getBeers(beers))
+    })
   }
 }

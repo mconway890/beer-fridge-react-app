@@ -5,7 +5,7 @@ export const addBrewery = brewery => {
   };
 };
 
-export const getBreweries = breweries => {
+export const setBreweries = breweries => {
   return {
     type: 'GET_BREWERIES',
     breweries
@@ -23,5 +23,17 @@ export const upvoteBrewery = brewery => {
   return {
     type: 'UPVOTE_BREWERY',
     brewery
+  }
+}
+
+const URL = process.env.REACT_APP_URL;
+
+export const getBreweries = () => {
+  return dispatch => {
+    return fetch(`${URL}/breweries`)
+    .then(res => res.json())
+    .then(breweries => {
+      dispatch(setBreweries(breweries))
+    })
   }
 }

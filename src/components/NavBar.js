@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const link = {
   width: '100px',
@@ -12,15 +12,15 @@ const link = {
 
 const NavBar = () => {
   return (<div className="navbar">
-    <NavLink to="/" style={link} activeStyle={{
+    <Link to="/" style={link} activeStyle={{
         background: 'darkblue'
-      }}>Home</NavLink>
-    <NavLink to="/beers" exact="exact" style={link} activeStyle={{
+      }}>Home</Link>
+    <Link to="/beers" exact="exact" style={link} activeStyle={{
         background: 'darkblue'
-      }}>Beers</NavLink>
-    <NavLink to="/breweries" exact="exact" style={link} activeStyle={{
+      }}>Beers</Link>
+    <Link to="/breweries" exact="exact" style={link} activeStyle={{
         background: 'darkblue'
-      }}>Breweries</NavLink>
+      }}>Breweries</Link>
   </div>);
 };
 

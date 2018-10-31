@@ -4,6 +4,7 @@ import Beers from './Beers';
 import BeerCard from '../components/BeerCard';
 import BeerInput from './BeerInput';
 import { upvoteBeer } from '../actions/beerActions';
+import { fetchBeer } from '../actions/beerActions';
 
 class DisplayBeer extends Component {
 
@@ -12,15 +13,20 @@ class DisplayBeer extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchBeers(this.props.match.params.beerId);
+    this.props.fetchBeer(this.props.match.params.beerId);
   }
 
   render() {
+    let beer = this.props.beer[0]
     return (
       <div className="displayBeer">
-        <h1>{beer.name}</h1>
-        <p>{beer.style}</p>
-        <p>{beer.brewery}</p>
+        <div>
+          <h1>{beer.name}</h1>
+          <p>{beer.style}</p>
+          <p>{beer.brewery}</p>
+          <br></br>
+          <button beer={beer} upvoteBeer={this.handleClick}/>
+        </div>
       </div>
     )
   }
@@ -32,4 +38,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, {getBeer})(DisplayBeer)
+export default connect(mapStateToProps, {fetchBeer, upvoteBeer})(DisplayBeer)

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import BreweryInput from './components/BreweryInput';
-import Breweries from './components/Breweries';
-import BeerInput from './components/BeerInput';
-import Beers from './components/Beers';
+import BreweryInput from './containers/BreweryInput';
+import Breweries from './containers/Breweries';
+import BeerInput from './containers/BeerInput';
+import Beers from './containers/Beers';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
 import './App.css';

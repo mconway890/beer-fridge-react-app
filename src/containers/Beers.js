@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../App.css';
+import { getBeers } from '../actions/beerActions';
 
 class Beers extends Component {
 
-  render() {
+  ComponentDidMount() {
+    this.props.getBeers()
+  }
 
-    let beers = this.props.beers.map(beer => <li key={beer.id}>{beer.name} from {beer.breweryName}</li>);
+  render() {
+    const { recipes, match } = this.props;
+    const ratedBeers = beers.sort(function(a, b) {
+            return b.upvotes - a.upvotes;
+          })
 
     return (
-      <div>
-        <ul>
-          {beers}
-        </ul>
+      <div className="BeersContainer">
+        <h1 className="beerName">Beers</h1>
+          {ratedBeers.map(beer => <BeerCard key={beer.id} beer={beer} /> )}
       </div>
     );
   }

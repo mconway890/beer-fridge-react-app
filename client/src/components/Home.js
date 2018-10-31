@@ -9,6 +9,10 @@ class Home extends Component {
     console.log(`Logging in ${username} with password ${password}`);
   };
 
+  signup = ({ username, password, confirm_password }) => {
+    console.log(`Logging in ${username} with password ${password}`);
+  };
+
   render() {
     return (
       <div>

@@ -3,6 +3,9 @@ import uuid from "uuid";
 function breweriesReducer(state = [], action) {
   let idx;
   switch (action.type) {
+    case "GET_BREWERIES":
+      return action.breweries;
+
     case "ADD_BREWERY":
       return [...state, action.brewery];
 
@@ -19,6 +22,15 @@ function breweriesReducer(state = [], action) {
       } else {
         return [...state, { breweryName: action.beer.breweryName, id: uuid() }];
       }
+
+    case "UPVOTE_BREWERY":
+      return state.map((brewery) => {
+        if (brewery.id === action.brewery.id) {
+          return action.brewery
+        } else {
+          return brewery
+        }
+      });
 
     default:
       return state;

@@ -8,7 +8,7 @@ export class BeerInput extends Component {
   state = {
     name: '',
     style: '',
-    brewery: ''
+    breweryName: ''
   }
 
   handleOnChange = event => {
@@ -25,7 +25,7 @@ export class BeerInput extends Component {
     this.setState({
       name: '',
       style: '',
-      brewery: ''
+      breweryName: ''
     });
   }
 
@@ -53,7 +53,7 @@ export class BeerInput extends Component {
             type="text"
             onChange={(event) => this.handleOnChange(event)}
             name="brewery"
-            value={this.state.brewery}
+            value={this.state.breweryName}
             placeholder="brewery" />
         </p>
         <input type="submit" />

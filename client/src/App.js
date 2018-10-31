@@ -18,8 +18,8 @@ export class App extends Component {
       <div>
         <NavBar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/beers" component={Beers} />
-        <Route exact path="/breweries" component={Breweries} />
+        <Route exact path="/beers" component={BeerInput}/>
+        <Route exact path="/breweries" component={BreweryInput} />
       </div>
       </Router>
     );

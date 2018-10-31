@@ -1,27 +1,62 @@
-import React from 'react';
+import React, {Component} from 'react';
+import 'semantic-ui-css/semantic.min.css';
+import { Icon, Menu } from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
 
-const link = {
-  width: '100px',
-  padding: '12px',
-  margin: '0 6px 6px',
-  background: 'blue',
-  textDecoration: 'none',
-  color: 'white'
+export default class MenuExampleLabeledIconsVertical extends Component {
+  state = { activeItem: 'home' }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  render() {
+    const { activeItem } = this.state
+
+    return (
+      <Menu icon='labeled' vertical>
+      <Menu.Item header>BeerFridge</Menu.Item>
+        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} as={Link} to='/'>
+          <Icon name='home' />
+          Home
+        </Menu.Item>
+
+        <Menu.Item
+          as={Link} to='/beers'
+          name='beer'
+          active={activeItem === 'beer'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='beer' />
+          Beers
+        </Menu.Item>
+        <Menu.Item
+          as={Link} to='/beers/new'
+          name='add beer'
+          active={activeItem === 'add beer'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='plus' />
+          Add Beer
+        </Menu.Item>
+
+        <Menu.Item
+          as={Link} to='/breweries'
+          name='breweries'
+          active={activeItem === 'breweries'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='fort awesome' />
+          Breweries
+        </Menu.Item>
+        <Menu.Item
+          as={Link} to='/breweries/new'
+          name='add brewery'
+          active={activeItem === 'brewery'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='plus' />
+          Add Brewery
+        </Menu.Item>
+      </Menu>
+    )
+  }
 }
-
-const NavBar = () => {
-  return (<div className="navbar">
-    <Link to="/" style={link} activeStyle={{
-        background: 'darkblue'
-      }}>Home</Link>
-    <Link to="/beers" exact="exact" style={link} activeStyle={{
-        background: 'darkblue'
-      }}>Beers</Link>
-    <Link to="/breweries" exact="exact" style={link} activeStyle={{
-        background: 'darkblue'
-      }}>Breweries</Link>
-  </div>);
-};
-
-export default NavBar;

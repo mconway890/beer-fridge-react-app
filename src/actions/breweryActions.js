@@ -35,5 +35,6 @@ export const getBreweries = () => {
     .then(breweries => {
       dispatch(setBreweries(breweries))
     })
+    .catch(error => console.log(error));
   }
 }

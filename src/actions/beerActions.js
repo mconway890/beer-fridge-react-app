@@ -33,7 +33,8 @@ export const getBeers = () => {
     return fetch(`${URL}/beers`)
     .then(res => res.json())
     .then(beers => {
-      dispatch(getBeers(beers))
+      dispatch(setBeers(beers))
     })
+    .catch(error => console.log(error));
   }
 }

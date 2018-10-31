@@ -1,17 +1,24 @@
-import React from 'react';
-import { beers } from '../data';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const Beers = () => {
-  return (
-    <div>
-      <h1>Beers</h1>
-      {beers.map((beer, index) => (
-        <div key={index}>
-          <h2>Beer: {beer.name}</h2>
-        </div>
-      ))}
-    </div>
-  );
+class Beers extends Component {
+
+  render() {
+
+    let beers = this.props.beers.map(beer => <li key={beer.id}>{beer.name} from {beer.breweryName}</li>);
+
+    return (
+      <div>
+        <ul>
+          {beers}
+        </ul>
+      </div>
+    );
+  }
+};
+
+const mapStateToProps = state => {
+  return { beers: state.beers }
 }
 
-export default Beers
+export default connect(mapStateToProps)(Beers);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import { upvoteBreweries } from '../actions/breweryActions';
+import { upvoteBrewery } from '../actions/breweryActions';
 
 class BreweriesCard extends Component {
 
@@ -15,7 +15,7 @@ class BreweriesCard extends Component {
 					<h1 className="card-title">{brewery.name}</h1>
 				</a>
 		    <br></br>
-				<button onClick={() => {this.props.upvoteBreweries(brewery, breweries)}}>Upvote</button> {this.props.breweries.upvotes}
+				<button onClick={() => {this.props.upvoteBrewery(brewery, breweries)}}>Upvote</button> {this.props.breweries.upvotes}
 		  </div>
 		)
 	}
@@ -30,4 +30,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, {upvoteBreweries})(BreweriesCard);
+export default connect(mapStateToProps, {upvoteBrewery})(BreweriesCard);

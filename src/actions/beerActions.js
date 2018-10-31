@@ -38,3 +38,13 @@ export const getBeers = () => {
     .catch(error => console.log(error));
   }
 }
+
+export const fetchBeer = (beerId) => {
+  return dispatch => {
+    return fetch(`${URL}/beers/${beerId}`)
+    .then(resp => resp.json())
+    .then(beer => {
+      dispatch(setBeers([beer]));
+    })
+  }
+}

@@ -5,6 +5,13 @@ export const addBeer = beer => {
   };
 };
 
+export const getBeers = beers => {
+  return {
+    type: 'GET_BEERS',
+    beers
+  }
+}
+
 export const removeBeer = id => {
   return {
     type: 'REMOVE_BEER',

@@ -5,6 +5,13 @@ export const addBrewery = brewery => {
   };
 };
 
+export const getBreweries = breweries => {
+  return {
+    type: 'GET_BREWERIES',
+    breweries
+  }
+}
+
 export const removeBrewery = id => {
   return {
     type: 'REMOVE_BREWERY',

@@ -12,7 +12,7 @@ export default class MenuExampleLabeledIconsVertical extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu icon='labeled' vertical>
+      <Menu icon='labeled' horizontal>
       <Menu.Item header>BeerFridge</Menu.Item>
         <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} as={Link} to='/'>
           <Icon name='home' />

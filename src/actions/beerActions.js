@@ -1,3 +1,5 @@
+const URL = process.env.REACT_APP_URL;
+
 export const addBeer = beer => {
   return {
     type: 'ADD_BEER',
@@ -26,8 +28,6 @@ export const upvoteBeer = beer => {
   }
 }
 
-const URL = process.env.REACT_APP_URL;
-
 export const getBeers = () => {
   return dispatch => {
     return fetch(`${URL}/beers`)
@@ -45,6 +45,17 @@ export const fetchBeer = (beerId) => {
     .then(resp => resp.json())
     .then(beer => {
       dispatch(setBeers([beer]));
+    })
+  }
+}
+
+export const createBeer = (recipe) => {
+  return dispatch => {
+    return fetch(`${URL}/beers`, {
+      method: 'POST'
+    })
+    .then(beer => {
+      dispatch(addBeer(beer))
     })
   }
 }

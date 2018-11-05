@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import '../App.css';
 import { getBeers } from '../actions/beerActions';
 import BeerCard from '../components/BeerCard';
-import { Route } from 'react-router-dom';
-import BeerInput from './BeerInput';
 
 class Beers extends Component {
 

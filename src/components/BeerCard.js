@@ -12,9 +12,9 @@ class BeerCard extends Component {
 		return (
 			<div key={beer.id} className="BeerCard">
 				<a href={`beers/${beer.id}`}>
-					<h1 className="card-title">{beer.name}</h1>
+					<h3 className="card-title">{beer.name}</h3>
 				</a>
-		    <br></br>
+				<p>{beer.style} By {beer.breweryName}</p>
 				<button onClick={() => {this.props.upvoteBeer(beer, beers)}}>Upvote</button> {this.props.beers.upvotes}
 		  </div>
 		)

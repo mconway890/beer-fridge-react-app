@@ -5,7 +5,7 @@ import { getBreweries } from '../actions/breweryActions';
 
 class Breweries extends Component {
 
-  ComponentDidMount() {
+  componentDidMount() {
     this.props.getBreweries()
   }
 

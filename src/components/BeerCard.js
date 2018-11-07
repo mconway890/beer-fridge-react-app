@@ -1,33 +1,17 @@
-import React, { Component } from 'react';
-import '../App.css';
-import { connect } from 'react-redux';
-import { upvoteBeer } from '../actions/beerActions';
+import React from 'react';
 
-class BeerCard extends Component {
-
-	render() {
-
-		const { beer, beers } = this.props;
-
-		return (
-			<div key={beer.id} className="BeerCard">
-				<a href={`beers/${beer.id}`}>
+const BeerCard = ({ beer, removeBeer, upvoteBeer, downvoteBeer }) =>
+			<div>
+				<a>
 					<h3 className="card-title">{beer.name}</h3>
 				</a>
 				<p>{beer.style} By {beer.breweryName}</p>
-				<button onClick={() => {this.props.upvoteBeer(beer, beers)}}>Upvote</button> {this.props.beers.upvotes}
+				<button onClick={() => upvoteBeer(beer.id)}>Upvote</button>
+				<button onClick={() => downvoteBeer(beer.id)}>Downvote</button>
+				<button onClick={() => removeBeer(beer.id)}><span aria-hidden="true">&times;</span></button>
+				<div>Votes: {beer.votes}</div>
 		  </div>
-		)
-	}
-}
+		;
 
 
-const mapStateToProps = state => {
-	return {
-		beers: state.beers
-	}
-}
-
-
-
-export default connect(mapStateToProps, {upvoteBeer})(BeerCard);
+export default BeerCard;

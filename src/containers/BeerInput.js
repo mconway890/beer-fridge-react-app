@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { addBeer } from '../actions/beerActions';
 import uuid from 'uuid';
 import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 
 export class BeerInput extends Component {
 
@@ -64,7 +65,7 @@ export class BeerInput extends Component {
               value={this.state.breweryName}
               placeholder="brewery" />
           </p>
-          <button type="submit">Add Beer</button>
+          <Button type="submit" bsStyle="primary" bsSize="xsmall">Add Beer</Button>
         </form>
       </div>
     );

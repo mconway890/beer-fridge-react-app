@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button, ButtonGroup} from 'react-bootstrap';
 
 const BeerCard = ({ beer, removeBeer, upvoteBeer, downvoteBeer }) =>
 			<div>
@@ -6,9 +7,11 @@ const BeerCard = ({ beer, removeBeer, upvoteBeer, downvoteBeer }) =>
 					<h3 className="card-title">{beer.name}</h3>
 				</a>
 				<p>{beer.style} By {beer.breweryName}</p>
-				<button onClick={() => upvoteBeer(beer.id)}>Upvote</button>
-				<button onClick={() => downvoteBeer(beer.id)}>Downvote</button>
-				<button onClick={() => removeBeer(beer.id)}><span aria-hidden="true">&times;</span></button>
+				<ButtonGroup bsSize="small">
+					<Button bsStyle="success" onClick={() => upvoteBeer(beer.id)}>Upvote</Button>
+					<Button bsStyle="warning" onClick={() => downvoteBeer(beer.id)}>Downvote</Button>
+					<Button bsStyle="danger" onClick={() => removeBeer(beer.id)}><span aria-hidden="true">&times;</span></Button>
+				</ButtonGroup>
 				<div>Votes: {beer.votes}</div>
 		  </div>
 		;

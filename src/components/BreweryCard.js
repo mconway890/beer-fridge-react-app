@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Button, ButtonGroup} from 'react-bootstrap';
 
 const BreweryCard = ({ brewery, removeBrewery, upvoteBrewery, downvoteBrewery }) =>
 			<div key={brewery.id} className="BreweryCard">
-				<a>
+				<a href='breweries/{brewery.id}'>
 					<h3 className="card-title">{brewery.breweryName}</h3>
 				</a>
-				<button onClick={() => upvoteBrewery(brewery.id)}>Upvote</button>
-				<button onClick={() => downvoteBrewery(brewery.id)}>Downvote</button>
-				<button onClick={() => removeBrewery(brewery.id)}><span aria-hidden="true">&times;</span></button>
+				<ButtonGroup bsSize="small">
+					<Button bsStyle="success" onClick={() => upvoteBrewery(brewery.id)}>Upvote</Button>
+					<Button bsStyle="warning" onClick={() => downvoteBrewery(brewery.id)}>Downvote</Button>
+					<Button bsStyle="danger" onClick={() => removeBrewery(brewery.id)}><span aria-hidden="true">&times;</span></Button>
+				</ButtonGroup>
 				<div>Votes: {brewery.votes}</div>		  </div>
 			;
 

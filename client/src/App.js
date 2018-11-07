@@ -4,6 +4,7 @@ import Breweries from './containers/Breweries';
 import BeerInput from './containers/BeerInput';
 import Beers from './containers/Beers';
 import Home from './components/Home';
+import BeerListContainer from './containers/BeerListContainer';
 import NavBar from './components/NavBar';
 import './App.css';
 import {
@@ -26,6 +27,7 @@ export class App extends Component {
           <Route exact path="/breweries/new" component={BreweryInput} />
         </div>
         </Router>
+        <BeerListContainer />
       </div>
     );
   }

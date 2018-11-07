@@ -14,10 +14,10 @@ export const setBeers = beers => {
   }
 }
 
-export const removeBeer = id => {
+export const removeBeer = beerId => {
   return {
     type: 'REMOVE_BEER',
-    id
+    beerId
   };
 };
 

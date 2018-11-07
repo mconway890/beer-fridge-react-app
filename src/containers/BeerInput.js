@@ -6,12 +6,14 @@ import { connect } from 'react-redux';
 export class BeerInput extends Component {
 
   state = {
+    // set up controlled form with internal state
     name: '',
     style: '',
     breweryName: ''
   }
 
   handleOnChange = event => {
+    // handle updating component state
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -19,9 +21,13 @@ export class BeerInput extends Component {
 
 
   handleOnSubmit = event => {
+    // handle form submit
     event.preventDefault();
+    // create beer object from state
     const beer = {...this.state, id: uuid() };
+    // pass beer object to action creator
     this.props.addBeer(beer);
+    // update component state to return to default state
     this.setState({
       name: '',
       style: '',
@@ -58,11 +64,12 @@ export class BeerInput extends Component {
               value={this.state.breweryName}
               placeholder="brewery" />
           </p>
-          <input type="submit" />
+          <button type="submit">Add Beer</button>
         </form>
       </div>
     );
   }
 };
 
+// add arguments to connect as needed
 export default connect(null, { addBeer })(BeerInput);

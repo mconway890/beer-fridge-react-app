@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App.css';
-import { getBeers } from '../actions/beerActions';
 import BeerCard from '../components/BeerCard';
+import { removeBeer, upvoteBeer, downvoteBeer } from '../actions/beerActions';
 
 class Beers extends Component {
 
-  componentDidMount() {
-    this.props.getBeers()
-  }
-
   render() {
-    const { beers } = this.props;
-    const ratedBeers = beers.sort(function(a, b) {
-            return b.upvotes - a.upvotes;
-          })
+    const { beers, removeBeer, upvoteBeer, downvoteBeer } = this.props;
 
     return (
       <div className="BeersContainer">
         <h1 className="beerName">Beers</h1>
-          {ratedBeers.map(beer => <BeerCard key={beer.id} beer={beer} /> )}
+          {beers.map(beer =>
+          <BeerCard
+          key={beer.id}
+          upvoteBeer={upvoteBeer}
+          downvoteBeer={downvoteBeer}
+          removeBeer={removeBeer}
+          beer={beer} /> )}
       </div>
     );
   }
@@ -29,4 +28,4 @@ const mapStateToProps = state => {
   return { beers: state.beers }
 }
 
-export default connect(mapStateToProps, {getBeers})(Beers);
+export default connect(mapStateToProps, {upvoteBeer, removeBeer, downvoteBeer})(Beers);

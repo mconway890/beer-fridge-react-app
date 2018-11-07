@@ -1,7 +1,9 @@
+const URL = process.env.REACT_APP_URL;
+
 export const addBrewery = brewery => {
   return {
     type: 'ADD_BREWERY',
-    brewery
+    brewery: Object.assign({}, brewery, { votes: 0 })
   };
 };
 
@@ -12,21 +14,26 @@ export const setBreweries = breweries => {
   }
 }
 
-export const removeBrewery = id => {
+export const removeBrewery = breweryId => {
   return {
     type: 'REMOVE_BREWERY',
-    id
+    breweryId
   };
 };
 
-export const upvoteBrewery = brewery => {
+export const upvoteBrewery = breweryId => {
   return {
     type: 'UPVOTE_BREWERY',
-    brewery
+    breweryId
   }
 }
 
-const URL = process.env.REACT_APP_URL;
+export const downvoteBrewery = breweryId => {
+  return {
+    type: 'DOWNVOTE_BREWERY',
+    breweryId
+  }
+}
 
 export const getBreweries = () => {
   return dispatch => {

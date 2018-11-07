@@ -14,6 +14,16 @@ function breweriesReducer(state = [], action) {
     case "REMOVE_BREWERY":
       return state.filter(brewery => brewery.id !== action.breweryId);
 
+    case "ADD_BEER":
+      let existingBrewery = state.filter(
+        brewery => brewery.breweryName === action.beer.breweryName
+      );
+      if (existingBrewery.length > 0){
+        return state;
+      } else {
+        return [...state, { breweryName: action.beer.breweryName, id: uuid() }];
+      }
+
     case "UPVOTE_BREWERY":
     index = state.findIndex(brewery => brewery.id === action.breweryId);
       brewery = state[index];

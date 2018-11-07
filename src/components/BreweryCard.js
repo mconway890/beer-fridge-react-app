@@ -1,32 +1,14 @@
 import React, { Component } from 'react';
-import '../App.css';
-import { connect } from 'react-redux';
-import { upvoteBrewery } from '../actions/breweryActions';
 
-class BreweriesCard extends Component {
-
-	render() {
-
-		const { brewery, breweries } = this.props;
-
-		return (
-			<div key={brewery.id} className="BreweriesCard">
-				<a href={`breweries/${brewery.id}`}>
+const BreweryCard = ({ brewery, removeBrewery, upvoteBrewery, downvoteBrewery }) =>
+			<div key={brewery.id} className="BreweryCard">
+				<a>
 					<h3 className="card-title">{brewery.breweryName}</h3>
 				</a>
-				<button onClick={() => {this.props.upvoteBrewery(brewery, breweries)}}>Upvote</button> {this.props.breweries.upvotes}
-		  </div>
-		)
-	}
-}
+				<button onClick={() => upvoteBrewery(brewery.id)}>Upvote</button>
+				<button onClick={() => downvoteBrewery(brewery.id)}>Downvote</button>
+				<button onClick={() => removeBrewery(brewery.id)}><span aria-hidden="true">&times;</span></button>
+				<div>Votes: {brewery.votes}</div>		  </div>
+			;
 
-
-const mapStateToProps = state => {
-	return {
-		breweries: state.breweries
-	}
-}
-
-
-
-export default connect(mapStateToProps, {upvoteBrewery})(BreweriesCard);
+export default BreweryCard;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { addBrewery } from '../actions/breweryActions';
 import uuid from 'uuid';
 import { connect } from 'react-redux';
-import {Button} from 'react-bootstrap';
+import { Button, FormGroup, FormControl, ControlLabel, Col, Form } from 'react-bootstrap';
 
 export class BreweryInput extends Component {
 
@@ -35,17 +35,28 @@ export class BreweryInput extends Component {
     return(
       <div>
         <h2>Add New Brewery</h2>
-          <form onSubmit={(event) => this.handleOnSubmit(event)}>
-            <p>
-              <input
-                type="text"
-                onChange={(event) => this.handleOnChange(event)}
-                name="breweryName"
-                value={this.state.breweryName}
-                placeholder="brewery name" />
-            </p>
-            <Button type="submit" bsStyle="primary" bsSize="xsmall">Add Brewery</Button>
-          </form>
+        <Form horizontal onSubmit={(event) => this.handleOnSubmit(event)}>
+          <FormGroup controlId="formHorizontalEmail">
+            <Col componentClass={ControlLabel} sm={2}>
+              Brewery Name
+            </Col>
+            <Col sm={10}>
+          <FormControl
+          name="breweryName"
+          type="text"
+          placeholder="Brewery Name"
+          value={this.state.breweryName}
+          onChange={(event) => this.handleOnChange(event)}
+           />
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col smOffset={2} sm={10}>
+            <Button type="submit">Submit</Button>
+          </Col>
+        </FormGroup>
+        </Form>
         </div>
     );
   }

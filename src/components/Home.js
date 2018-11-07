@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css'
+import {Image} from 'react-bootstrap';
 
 
 class Home extends Component {
@@ -15,7 +16,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Beer Fridge</h1>
+        <Image src="/beer.jpg" responsive />
       </div>
     );
   }

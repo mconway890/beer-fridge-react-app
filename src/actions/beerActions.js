@@ -3,7 +3,7 @@ const URL = process.env.REACT_APP_URL;
 export const addBeer = beer => {
   return {
     type: 'ADD_BEER',
-    beer
+    beer: Object.assign({}, beer, { votes: 0 })
   };
 };
 
@@ -21,10 +21,17 @@ export const removeBeer = id => {
   };
 };
 
-export const upvoteBeer = beer => {
+export const upvoteBeer = beerId => {
   return {
     type: 'UPVOTE_BEER',
-    beer
+    beerId
+  }
+}
+
+export const downvoteBeer = beerId => {
+  return {
+    type: 'DOWNVOTE_BEER',
+    beerId
   }
 }
 

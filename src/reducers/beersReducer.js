@@ -1,5 +1,7 @@
 function beersReducer(state = [], action) {
-  let idx;
+  let index;
+  let beer;
+
   switch (action.type) {
     case 'GET_BEERS':
       return action.beers;
@@ -8,18 +10,30 @@ function beersReducer(state = [], action) {
       return [...state, action.beer];
 
     case "REMOVE_BEER":
-      idx = state.indexOf(action.id);
-      return [...state.slice(0, idx), ...state.slice(idx + 1)];
+      return state.filter(beer => beer.id !== action.beerId);
 
     case "UPVOTE_BEER":
-      return state.map((beer) => {
-        if (beer.id === action.beer.id) {
-          return action.beer
-        } else {
-          return beer
+    index = state.findIndex(beer => beer.id === action.beerId);
+      beer = state[index];
+
+      return [
+        ...state.slice(0, index),
+        Object.assign({}, beer, { votes: beer.votes += 1 }),
+        ...state.slice(index + 1)
+      ];
+
+    case 'DOWNVOTE_BEER':
+        index = state.findIndex(beer => beer.id === action.beerId);
+        beer = state[index];
+        if (beer.votes > 0) {
+          return [
+            ...state.slice(0, index),
+            Object.assign({}, beer, { votes: beer.votes -= 1 }),
+            ...state.slice(index + 1)
+          ];
         }
-      });
-      
+        break;
+
     default:
       return state;
   }

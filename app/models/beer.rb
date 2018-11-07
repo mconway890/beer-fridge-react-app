@@ -1,3 +1,3 @@
 class Beer < ApplicationRecord
-  belongs_to :brewery
+  belongs_to :brewery, optional: true
 end

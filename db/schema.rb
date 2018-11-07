@@ -17,6 +17,10 @@ ActiveRecord::Schema.define(version: 2018_11_07_185341) do
     t.string "style"
     t.string "brewery"
     t.integer "brewery_id"
+    t.integer "beer_no"
+    t.integer "abv"
+    t.integer "ibu"
+    t.integer "ounces"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

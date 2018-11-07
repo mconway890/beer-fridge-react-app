@@ -5,6 +5,10 @@ class CreateBeers < ActiveRecord::Migration[5.2]
       t.string :style
       t.string :brewery
       t.integer :brewery_id
+      t.integer :beer_no
+      t.integer :abv
+      t.integer :ibu
+      t.integer :ounces
 
       t.timestamps
     end

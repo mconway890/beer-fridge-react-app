@@ -3590,3 +3590,44 @@ vendor/bundle/ruby/2.3.0/gems/puma-3.12.0/lib/puma/server.rb:658:in `handle_requ
 vendor/bundle/ruby/2.3.0/gems/puma-3.12.0/lib/puma/server.rb:472:in `process_client'
 vendor/bundle/ruby/2.3.0/gems/puma-3.12.0/lib/puma/server.rb:332:in `block in run'
 vendor/bundle/ruby/2.3.0/gems/puma-3.12.0/lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for ::1 at 2018-11-09 11:39:57 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ vendor/bundle/ruby/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/2.3.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/2.3.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/beers" for ::1 at 2018-11-09 11:40:04 -0500
+Processing by Api::V1::BeersController#index as HTML
+  [1m[36mBeer Load (3.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.89ms)
+Completed 200 OK in 107ms (Views: 98.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/v1/beers" for ::1 at 2018-11-09 11:41:15 -0500
+Processing by Api::V1::BeersController#index as */*
+  [1m[36mBeer Load (1.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.02ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/beers" for ::1 at 2018-11-09 11:42:16 -0500
+Processing by Api::V1::BeersController#index as */*
+  [1m[36mBeer Load (1.0ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (24.54ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/beers" for ::1 at 2018-11-09 11:42:51 -0500
+Processing by Api::V1::BeersController#index as */*
+  [1m[36mBeer Load (7.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.87ms)
+Completed 200 OK in 44ms (Views: 36.3ms | ActiveRecord: 7.4ms)
+
+

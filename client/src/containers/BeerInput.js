@@ -31,7 +31,7 @@ export class BeerInput extends Component {
 
   render() {
     return(
-      <div>
+      <div class="BeerForm">
         <h2>Add New Beer</h2>
         <Form horizontal onSubmit={(event) => this.handleOnSubmit(event)}>
           <FormGroup controlId="formHorizontalEmail">

@@ -30,3 +30,17 @@
     transform: rotate(360deg);
   }
 }
+
+div.BeersContainer {
+  margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+div.BeerForm {
+  margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+}

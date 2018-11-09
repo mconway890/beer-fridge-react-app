@@ -1,17 +1,16 @@
 import { combineReducers, applyMiddleware, createStore, compose } from "redux";
 import thunk from 'redux-thunk';
 import beersReducer from './reducers/beersReducer';
-import breweriesReducer from './reducers/breweriesReducer';
+import beerFormData from './reducers/beerFormData';
 
-const rootReducer = combineReducers({
-  beers: beersReducer,
-  breweries: breweriesReducer
-})
+const reducers = combineReducers({
+  beersReducer,
+  beerFormData,
+});
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer,
-   composeEnhancer(applyMiddleware(thunk)),
+export default createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(thunk)),
  );
-
- export default store;

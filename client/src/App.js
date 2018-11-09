@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import DisplayBeer from './containers/DisplayBeer';
 import BeerCard from './components/BeerCard';
 import { connect } from 'react-redux';
+import { getBeers } from './actions/beerActions';
 
 class App extends Component {
 

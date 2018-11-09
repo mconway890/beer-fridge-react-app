@@ -1,4 +1,9 @@
-const URL = process.env.REACT_APP_URL;
+export const setBeers = beers => {
+  return {
+    type: 'GET_BEERS',
+    beers
+  }
+}
 
 export const addBeer = beer => {
   return {
@@ -6,13 +11,6 @@ export const addBeer = beer => {
     beer: Object.assign({}, beer, { votes: 0 })
   };
 };
-
-export const setBeers = beers => {
-  return {
-    type: 'GET_BEERS',
-    beers
-  }
-}
 
 export const removeBeer = beerId => {
   return {
@@ -37,8 +35,8 @@ export const downvoteBeer = beerId => {
 
 export const getBeers = () => {
   return dispatch => {
-    return fetch(`${URL}/beers`)
-    .then(res => res.json())
+    return fetch('http://localhost:3001/api/v1/beers')
+    .then(response => response.json())
     .then(beers => {
       dispatch(setBeers(beers))
     })
@@ -48,21 +46,40 @@ export const getBeers = () => {
 
 export const fetchBeer = (beerId) => {
   return dispatch => {
-    return fetch(`${URL}/beers/${beerId}`)
-    .then(resp => resp.json())
+    return fetch(`http://localhost:3001/api/v1/beers/${beerId}`)
+    .then(response => response.json())
     .then(beer => {
       dispatch(setBeers([beer]));
     })
+    .catch(error => console.log(error))
   }
 }
 
-export const createBeer = (recipe) => {
+export const createBeer = (beer) => {
   return dispatch => {
-    return fetch(`${URL}/beers`, {
-      method: 'POST'
+    return fetch('http://localhost:3001/api/v1/beers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({beer: beer})
     })
+    .then(response => response.json())
     .then(beer => {
       dispatch(addBeer(beer))
     })
+    .catch(error => console.log(error))
+  }
+}
+
+export const deleteBeer = (beerId) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/beers/${beerId}`, {
+      method: "DELETE"
+    })
+    .then(response => {
+      dispatch(removeBeer(beerId))
+    })
+    .catch(error => console.log(error))
   }
 }

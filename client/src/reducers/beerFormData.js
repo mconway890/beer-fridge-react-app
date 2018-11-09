@@ -2,6 +2,7 @@ const initialState = {
   name: '',
   style: '',
   brewery: '',
+  abv: '',
 }
 
 export default (state = initialState, action) => {

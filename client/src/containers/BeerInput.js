@@ -1,39 +1,31 @@
 import React, { Component } from 'react';
 import { addBeer } from '../actions/beerActions';
-import uuid from 'uuid';
 import { connect } from 'react-redux';
 import { Button, FormGroup, FormControl, ControlLabel, Col, Form } from 'react-bootstrap';
 
 export class BeerInput extends Component {
-
-  state = {
-    // set up controlled form with internal state
-    name: '',
-    style: '',
-    breweryName: ''
+  constructor(props){
+    super(props);
+    this.state = {
+      name: '',
+      style: '',
+      brewery: '',
+      abv: '',
+    }
   }
 
   handleOnChange = event => {
-    // handle updating component state
-    this.setState({
-      [event.target.name]: event.target.value
-    });
+    const {name,value} = event.target
+    const thisBeerData = Object.assign({}, this.props.beerFormData, {
+      [name]: value
+    })
+    this.props.updateBeerFormData(thisBeerData)
   }
 
 
   handleOnSubmit = event => {
-    // handle form submit
     event.preventDefault();
-    // create beer object from state
-    const beer = {...this.state, id: uuid() };
-    // pass beer object to action creator
-    this.props.addBeer(beer);
-    // update component state to return to default state
-    this.setState({
-      name: '',
-      style: '',
-      breweryName: ''
-    });
+    this.props.createBeer(this.props.beerFormData, this.props.history)
   }
 
   render() {
@@ -73,14 +65,14 @@ export class BeerInput extends Component {
 
         <FormGroup controlId="formHorizontalPassword">
           <Col componentClass={ControlLabel} sm={2}>
-            Brewery
+            Abv
             </Col>
             <Col sm={10}>
           <FormControl
-          name="breweryName"
-          type="brewery"
-          placeholder="Brewery"
-          value={this.state.breweryName}
+          name="abv"
+          type="abv"
+          placeholder="ABV"
+          value={this.state.abv}
           onChange={(event) => this.handleOnChange(event)}
            />
           </Col>
@@ -97,5 +89,11 @@ export class BeerInput extends Component {
   }
 };
 
+mapStateToProps = state => {
+  return {
+    beerFormData: state.beerFormData
+  }
+}
+
 // add arguments to connect as needed
-export default connect(null, { addBeer })(BeerInput);
+export default connect(mapStateToProps, { createBeer, updateBeerFormData })(BeerInput);

@@ -9,18 +9,17 @@ import BeerInput from './BeerInput';
 class Beers extends Component {
 
   render() {
-    //const beers = this.props.beers
+    const beers = this.props.beers
 
     return (
       <div>
-        <BeerInput />
-            <div className="BeersContainer">
-              <h1 className="beerName">Beers</h1>
-                {this.props && this.props.beers.map(beer =>
-                <BeerCard
-                key={beer.id}
-                beer={beer} /> )}
-          </div>
+        <div className="BeersContainer">
+          <h1 className="beerName">Beers</h1>
+            {this.props && this.props.beers.map(beer =>
+            <BeerCard
+            key={beer.id}
+            beer={beer} /> )}
+        </div>
       </div>
     );
   }

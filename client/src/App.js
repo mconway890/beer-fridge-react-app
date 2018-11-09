@@ -6,7 +6,6 @@ import NavBar from './components/NavBar';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import DisplayBeer from './containers/DisplayBeer';
-import BeerCard from './components/BeerCard';
 import { connect } from 'react-redux';
 import { getBeers } from './actions/beerActions';
 

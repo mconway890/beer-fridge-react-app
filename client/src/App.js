@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import BreweryInput from './containers/BreweryInput';
-import Breweries from './containers/Breweries';
 import BeerInput from './containers/BeerInput';
 import Beers from './containers/Beers';
 import Home from './components/Home';
-import BeerListContainer from './containers/BeerListContainer';
 import NavBar from './components/NavBar';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import DisplayBeer from './containers/DisplayBeer';
+import BeerCard from './components/BeerCard';
+import { connect } from 'react-redux';
 
+class App extends Component {
 
-export class App extends Component {
+  componentDidMount() {
+    this.props.getBeers()
+  }
+
   render() {
     return (
       <div className="App">
@@ -21,16 +22,29 @@ export class App extends Component {
         <div>
           <NavBar />
           <Route exact path="/" component={Home} />
-          <Route exact path="/beers" component={Beers}/>
           <Route exact path="/beers/new" component={BeerInput}/>
-          <Route exact path="/breweries" component={Breweries}/>
-          <Route exact path="/breweries/new" component={BreweryInput} />
+          <Route exact path="/beers" component={Beers}/>
+          <Route exact path="/beers/:beerId" component={DisplayBeer} />
         </div>
         </Router>
-        <BeerListContainer />
       </div>
     );
   }
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return({
+    beers: state.beersReducer
+  })
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return({
+    getBeers: () => {
+      let action = getBeers()
+      dispatch(action)
+    }
+  })
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { addBeer } from '../actions/beerActions';
+import { createBeer } from '../actions/beerActions';
+import { updateBeerFormData } from '../actions/beerInput';
 import { connect } from 'react-redux';
 import { Button, FormGroup, FormControl, ControlLabel, Col, Form } from 'react-bootstrap';
 
@@ -89,7 +90,7 @@ export class BeerInput extends Component {
   }
 };
 
-mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     beerFormData: state.beerFormData
   }

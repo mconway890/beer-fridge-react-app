@@ -32,7 +32,7 @@ export class BeerInput extends Component {
   render() {
     const {name,style,brewery,abv} = this.props.beerFormData
     return(
-      <div class="BeerForm">
+      <div className="BeerForm">
         <h2>Add New Beer</h2>
         <Form horizontal onSubmit={(event) => this.handleOnSubmit(event)}>
           <FormGroup controlId="formHorizontalEmail">

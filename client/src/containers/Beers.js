@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App.css';
-import BeerCard from '../components/BeerCard';
 import { removeBeer, upvoteBeer, downvoteBeer, getBeers } from '../actions/beerActions';
-import BeerInput from './BeerInput';
+import CsvToHtmlTable from '../components/csvToHtmlTable.jsx';
+import { csvData } from "../csvData";
 
 
 class Beers extends Component {
 
   render() {
-    const beers = this.props.beers
-
     return (
       <div>
-        <div className="BeersContainer">
-          <h1 className="beerName">Beers</h1>
-            {this.props && this.props.beers.map(beer =>
-            <BeerCard
-            key={beer.id}
-            beer={beer} /> )}
-        </div>
+        <CsvToHtmlTable
+        data={csvData}
+        csvDelimiter=","
+        tableClassName="table table-striped table-hover"
+        />
       </div>
     );
   }

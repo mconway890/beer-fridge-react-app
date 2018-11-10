@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "namor": "^1.0.1",
+    "react": "15.5.3",
+    "react-dom": "15.5.3",
     "react-table": "^6.8.6"
   }
 }

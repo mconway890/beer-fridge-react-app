@@ -21,10 +21,10 @@ export const removeBeer = beerId => {
   };
 };
 
-export const upvoteBeer = beerId => {
+export const upvoteBeer = beer => {
   return {
     type: 'UPVOTE_BEER',
-    beerId
+    beer
   }
 }
 
@@ -82,6 +82,23 @@ export const deleteBeer = (beerId) => {
     })
     .then(response => {
       dispatch(removeBeer(beerId))
+    })
+    .catch(error => console.log(error))
+  }
+}
+
+export const likeBeer = (beerStatus) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/beers/${beerStatus.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({beerStatus})
+    })
+    .then(response => response.json())
+    .then(beer => {
+      dispatch(upvoteBeer(beer))
     })
     .catch(error => console.log(error))
   }

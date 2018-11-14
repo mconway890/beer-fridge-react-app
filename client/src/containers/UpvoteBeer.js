@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {upvoteBeer} from '../actions/beerActions';
+import {likeBeer} from '../actions/beerActions';
 import UpvoteBeerButton from '../components/UpvoteBeerButton';
 
 class UpvoteBeer extends Component {
 
   handleClick = () => {
-    this.props.upvoteBeer(this.props.beer.id, this.props.history)
+    this.props.likeBeer(this.props.beer.id, this.props.history)
   }
 
   render() {
@@ -20,4 +20,4 @@ class UpvoteBeer extends Component {
   }
 }
 
-export default connect(null, {upvoteBeer})(UpvoteBeer);
+export default connect(null, {likeBeer})(UpvoteBeer);

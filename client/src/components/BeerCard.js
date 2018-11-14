@@ -2,7 +2,7 @@ import React from 'react';
 import DeleteBeer from '../containers/DeleteBeer';
 import UpvoteBeer from '../containers/UpvoteBeer';
 
-const BeerCard = ({beer, upvoteBeer, downvoteBeer, deleteBeer}) =>
+const BeerCard = ({beer, likeBeer, downvoteBeer, deleteBeer}) =>
 			<tbody>
 				<tr>
 					<td><a href={`beers/${beer.id}`}>{beer.name}</a></td>

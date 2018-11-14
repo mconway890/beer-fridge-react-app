@@ -24,6 +24,13 @@ module Api::V1
       @beer.destroy
     end
 
+    def update
+      if @beer.update(beer_params)
+        render json: @beer
+      else
+        render( status: 400, json: {error: "Could Not Update."})
+    end
+
     private
 
       def set_beer

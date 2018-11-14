@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+import { Icon } from 'semantic-ui-react'
 
 class DeleteBeerButton extends Component {
   render(){
     return(
-      <p>X</p>
+      <Icon name='delete'/>
     )
   }
 }

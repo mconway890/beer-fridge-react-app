@@ -1,24 +1,20 @@
-import React from 'react';
-import {Table} from 'react-bootstrap';
+import React, {Component} from 'react';
 
-const BeerCard = ({ beer }) =>
-			<div>
-				<Table striped bordered condensed hover>
-			  <thead>
-			    <tr>
-			      <th>Beer Name</th>
-			      <th>Style</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <td><a href={`beers/${beer.id}`}>{beer.name}</a></td>
-			      <td>{beer.style}</td>
-			    </tr>
-					</tbody>
-				</Table>
-		  </div>
-		;
+class BeerCard extends Component {
+	render() {
+		const {beer} = this.props;
+		return(
+			<tbody>
+				<tr>
+					<td><a href={`beers/${beer.id}`}>{beer.name}</a></td>
+					<td>{beer.style}</td>
+					<td>{beer.abv}</td>
+					<td>{beer.brewery}</td>
+				</tr>
+				</tbody>
+		)
+	}
+}
 
 
 export default BeerCard;

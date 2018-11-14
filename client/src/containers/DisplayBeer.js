@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {deleteBeer } from '../actions/beerActions';
 
+
 const DisplayBeer = ({ beer }) =>
   <div className="displayBeer">
-    <div>
+    <div className="beerShow">
       <h1>{beer.name}</h1>
       <p>{beer.style}</p>
       <p>{beer.abv}</p>

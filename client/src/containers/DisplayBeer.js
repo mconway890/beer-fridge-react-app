@@ -7,7 +7,7 @@ const DisplayBeer = ({ beer }) =>
     <div>
       <h1>{beer.name}</h1>
       <p>{beer.style}</p>
-      <p>{beer.abv}%</p>
+      <p>{beer.abv}</p>
       <p>{beer.brewery}</p>
       <br></br>
     </div>

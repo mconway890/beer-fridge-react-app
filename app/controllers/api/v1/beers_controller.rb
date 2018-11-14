@@ -20,6 +20,10 @@ module Api::V1
       render json: @beer
     end
 
+    def destroy
+      @beer.destroy
+    end
+
     private
 
       def set_beer

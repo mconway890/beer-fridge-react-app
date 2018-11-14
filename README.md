@@ -4,23 +4,13 @@ Beer Fridge is a single page React/Redux app built with a Rails API back-end. Th
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
 Clone the repo:
 
 ```
 git clone https://github.com/mconway890/beer-fridge-react-app.git
 ```
+
+### Installing
 
 ```
 cd beer-fridge-react-app

@@ -29,6 +29,7 @@ module Api::V1
         render json: @beer
       else
         render( status: 400, json: {error: "Could Not Update."})
+      end
     end
 
     private

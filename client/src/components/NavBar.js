@@ -37,6 +37,15 @@ export default class MenuExampleLabeledIconsVertical extends Component {
           <Icon name='plus' />
           Add Beer
         </Menu.Item>
+        <Menu.Item
+          as={Link} to='/about'
+          name='about'
+          active={activeItem === 'about'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='star' />
+          About
+        </Menu.Item>
       </Menu>
     )
   }

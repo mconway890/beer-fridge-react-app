@@ -31,7 +31,7 @@ module Api::V1
       end
 
       def beer_params
-        params.require(:beer).permit(:name, :style, :abv, :brewery)
+        params.require(:beer).permit(:name, :style, :abv, :brewery, :description)
       end
   end
 end

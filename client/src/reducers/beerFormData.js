@@ -3,6 +3,7 @@ const initialState = {
   style: '',
   brewery: '',
   abv: '',
+  description: '',
 }
 
 export default (state = initialState, action) => {

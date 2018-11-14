@@ -12,6 +12,7 @@ export class BeerInput extends Component {
       style: '',
       brewery: '',
       abv: '',
+      description: '',
     }
   }
 
@@ -30,7 +31,7 @@ export class BeerInput extends Component {
   }
 
   render() {
-    const {name,style,brewery,abv} = this.props.beerFormData
+    const {name,style,brewery,abv,description} = this.props.beerFormData
     return(
       <div className="BeerForm">
         <h2>Add New Beer</h2>
@@ -90,6 +91,21 @@ export class BeerInput extends Component {
           type="text"
           placeholder="Brewery"
           value={brewery}
+          onChange={(event) => this.handleOnChange(event)}
+           />
+          </Col>
+        </FormGroup>
+
+        <FormGroup controlId="formHorizontalPassword">
+          <Col componentClass={ControlLabel} sm={2}>
+            Description
+            </Col>
+            <Col sm={10}>
+          <FormControl
+          name="description"
+          type="text"
+          placeholder="Description"
+          value={description}
           onChange={(event) => this.handleOnChange(event)}
            />
           </Col>

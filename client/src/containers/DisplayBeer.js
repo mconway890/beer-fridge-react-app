@@ -9,6 +9,7 @@ const DisplayBeer = ({ beer }) =>
       <p>{beer.style}</p>
       <p>{beer.abv}</p>
       <p>{beer.brewery}</p>
+      <p>{beer.description}</p>
       <br></br>
     </div>
   </div>

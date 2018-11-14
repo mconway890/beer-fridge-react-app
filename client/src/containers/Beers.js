@@ -23,6 +23,7 @@ class Beers extends Component {
                 <th>ABV</th>
                 <th>Brewery</th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
 

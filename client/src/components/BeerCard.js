@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteBeer from '../containers/DeleteBeer';
 
 const BeerCard = ({beer, upvoteBeer, downvoteBeer, deleteBeer}) =>
 			<tbody>
@@ -7,6 +8,7 @@ const BeerCard = ({beer, upvoteBeer, downvoteBeer, deleteBeer}) =>
 					<td>{beer.style}</td>
 					<td>{beer.abv}</td>
 					<td>{beer.brewery}</td>
+					<td><DeleteBeer history={beer.history} beer={beer}/></td>
 				</tr>
 				</tbody>
 

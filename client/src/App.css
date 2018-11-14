@@ -44,3 +44,13 @@ div.BeerForm {
     border: 3px solid black;
     padding: 10px;
 }
+
+div.beerShow {
+  width: 70%;
+  margin: auto;
+}
+
+div.card-header {
+  font-weight: bold;
+  font-size: 20px
+}

@@ -1,3 +1,5 @@
+import {resetBeerForm} from './beerInput';
+
 export const setBeers = beers => {
   return {
     type: 'GET_BEERS',

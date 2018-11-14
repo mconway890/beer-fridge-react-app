@@ -30259,3 +30259,43 @@ Processing by Api::V1::BeersController#index as */*
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/api/v1/beers" for ::1 at 2018-11-14 11:56:54 -0500
+Processing by Api::V1::BeersController#index as */*
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.2ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/beers" for ::1 at 2018-11-14 11:59:56 -0500
+Processing by Api::V1::BeersController#index as */*
+  [1m[36mBeer Load (2.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.18ms)
+Completed 200 OK in 45ms (Views: 38.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/beers" for ::1 at 2018-11-14 12:01:33 -0500
+Processing by Api::V1::BeersController#index as */*
+  [1m[36mBeer Load (1.8ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.51ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/beers" for ::1 at 2018-11-14 12:01:45 -0500
+Processing by Api::V1::BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.3ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/beers" for ::1 at 2018-11-14 12:12:08 -0500
+Processing by Api::V1::BeersController#index as */*
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/api/v1/beers_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.46ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+

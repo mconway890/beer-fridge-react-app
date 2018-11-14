@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class BeerCard extends Component {
-	render() {
-		const {beer} = this.props;
-		return(
+const BeerCard = ({beer, upvoteBeer, downvoteBeer, deleteBeer}) =>
 			<tbody>
 				<tr>
 					<td><a href={`beers/${beer.id}`}>{beer.name}</a></td>
@@ -12,9 +9,7 @@ class BeerCard extends Component {
 					<td>{beer.brewery}</td>
 				</tr>
 				</tbody>
-		)
-	}
-}
+
 
 
 export default BeerCard;

@@ -39,7 +39,7 @@ module Api::V1
       end
 
       def beer_params
-        params.fetch(:beer, {}).permit(:name, :style, :abv, :brewery, :description, :votes)
+        params.fetch(:beer, {}).permit(:id, :name, :style, :abv, :brewery, :description, :votes)
       end
   end
 end

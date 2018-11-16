@@ -13,13 +13,14 @@ function beersReducer(state = [], action) {
       return state.filter(beer => beer.id !== action.beerId);
 
     case "UPVOTE_BEER":
-      return state.map(beer => {
-        if(beer.id === action.beer.id) {
-          return action.beer
-        } else{
-          return beer
-        }
-      })
+      index = state.findIndex(beer => beer.id === action.beerId);
+      beer = state[index];
+
+      return [
+        ...state.slice(0, index),
+        Object.assign({}, beer, { votes: beer.votes += 1 }),
+        ...state.slice(index + 1)
+      ];
 
     case 'DOWNVOTE_BEER':
         index = state.findIndex(beer => beer.id === action.beerId);

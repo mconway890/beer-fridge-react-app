@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_220308) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-    t.integer "votes"
+    t.integer "votes", default: 0
   end
 
   create_table "breweries", force: :cascade do |t|

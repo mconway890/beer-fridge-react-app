@@ -21,10 +21,10 @@ export const removeBeer = beerId => {
   };
 };
 
-export const upvoteBeer = beer => {
+export const upvoteBeer = beerId => {
   return {
     type: 'UPVOTE_BEER',
-    beer
+    beerId
   }
 }
 
@@ -87,18 +87,37 @@ export const deleteBeer = (beerId) => {
   }
 }
 
-export const likeBeer = (beerStatus) => {
+export const likeBeer = (beerId) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/beers/${beerStatus.id}`, {
+    return fetch(`http://localhost:3001/api/v1/beers/${beerId}`, {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      body: JSON.stringify({beerStatus})
+      body: JSON.stringify(beerId)
     })
     .then(response => response.json())
     .then(beer => {
-      dispatch(upvoteBeer(beer))
+      dispatch(upvoteBeer(beerId))
+    })
+    .catch(error => console.log(error))
+  }
+}
+
+export const dislikeBeer = (beerId) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/beers/${beerId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(beerId)
+    })
+    .then(response => response.json())
+    .then(beer => {
+      dispatch(downvoteBeer(beerId))
     })
     .catch(error => console.log(error))
   }

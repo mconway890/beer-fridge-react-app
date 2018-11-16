@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App.css';
 import BeerCard from '../components/BeerCard';
-import { deleteBeer, likeBeer, downvoteBeer, getBeers } from '../actions/beerActions';
+import { deleteBeer, likeBeer, dislikeBeer, getBeers } from '../actions/beerActions';
 import {Table} from 'react-bootstrap';
 
 class Beers extends Component {
@@ -22,8 +22,10 @@ class Beers extends Component {
                 <th>Style</th>
                 <th>ABV</th>
                 <th>Brewery</th>
-                <th></th>
-                <th></th>
+                <th>Remove</th>
+                <th>Like</th>
+                <th>Dislike</th>
+                <th>Votes</th>
               </tr>
             </thead>
 
@@ -31,7 +33,7 @@ class Beers extends Component {
             <BeerCard
             key={beer.id}
             likeBeer={likeBeer}
-            downvoteBeer={downvoteBeer}
+            dislikeBeer={dislikeBeer}
             deleteBeer={deleteBeer}
             beer={beer}
              /> )}
@@ -47,4 +49,4 @@ const mapStateToProps = state => {
   return { beers: state.beersReducer }
 }
 
-export default connect(mapStateToProps, {likeBeer, deleteBeer, downvoteBeer, getBeers})(Beers);
+export default connect(mapStateToProps, {likeBeer, deleteBeer, dislikeBeer, getBeers})(Beers);

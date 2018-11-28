@@ -16,11 +16,10 @@ class App extends Component {
   componentDidMount() {
     this.props.getBeers()
   }
-
+// App parent renders child component Navbar
   render() {
     return (
       <div className="App">
-        // App parent renders child component Navbar
         <Router>
         <div>
           <NavBar />

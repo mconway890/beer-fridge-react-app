@@ -15,3 +15,6 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
+// unregister method of the ServiceWorkerRegistration interface
+// unregisters the service worker registration and returns a Promise.
+// The promise will resolve to false if no registration was found, otherwise it resolves to true

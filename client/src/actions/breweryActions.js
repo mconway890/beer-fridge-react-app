@@ -7,28 +7,28 @@ export const setBreweries = breweries => {
   }
 }
 
-export const addBrewery= brewery=> {
+export const addBrewery = brewery => {
   return {
     type: 'ADD_BREWERY',
     brewery: Object.assign({}, brewery, { votes: 0 })
   };
 };
 
-export const removeBrewery= breweryId => {
+export const removeBrewery = breweryId => {
   return {
     type: 'REMOVE_BREWERY',
     breweryId
   };
 };
 
-export const upvoteBrewery= breweryId => {
+export const upvoteBrewery = breweryId => {
   return {
     type: 'UPVOTE_BREWERY',
     breweryId
   }
 }
 
-export const downvoteBrewery= breweryId => {
+export const downvoteBrewery = breweryId => {
   return {
     type: 'DOWNVOTE_BREWERY',
     breweryId
@@ -47,18 +47,18 @@ export const getBreweries = () => {
   }
 }
 
-export const fetchBrewery= (breweryId) => {
+export const fetchBrewery = (breweryId) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/breweries/${breweryId}`)
     .then(response => response.json())
-    .then(brewery=> {
+    .then(brewery => {
       dispatch(setBreweries([brewery]));
     })
     .catch(error => console.log(error))
   }
 }
 
-export const createBrewery= (brewery) => {
+export const createBrewery = (brewery) => {
   return dispatch => {
     return fetch('http://localhost:3001/api/v1/breweries', {
       method: 'POST',
@@ -88,7 +88,7 @@ export const deleteBrewery= (breweryId) => {
   }
 }
 
-export const likeBrewery= (breweryId) => {
+export const likeBrewery = (breweryId) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/breweries/${breweryId}`, {
       method: 'PATCH',
@@ -106,7 +106,7 @@ export const likeBrewery= (breweryId) => {
   }
 }
 
-export const dislikeBrewery= (breweryId) => {
+export const dislikeBrewery = (breweryId) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/breweries/${breweryId}`, {
       method: 'PATCH',
@@ -117,7 +117,7 @@ export const dislikeBrewery= (breweryId) => {
       body: JSON.stringify(breweryId)
     })
     .then(response => response.json())
-    .then(brewery=> {
+    .then(brewery => {
       dispatch(downvoteBrewery(breweryId))
     })
     .catch(error => console.log(error))

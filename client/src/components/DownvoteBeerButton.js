@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Icon } from 'semantic-ui-react'
 
-class DownvoteBeerButton extends Component {
-  render(){
-    return(
-      <Icon name='thumbs down outline'/>
-    )
-  }
+// component without state doesn't need to be a JS object of type Component
+const DownvoteBeerButton = () => {
+  return(
+    <Icon name='thumbs down outline'/>
+  )
 }
 
 export default DownvoteBeerButton;

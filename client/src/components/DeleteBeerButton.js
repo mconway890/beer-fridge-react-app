@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Icon } from 'semantic-ui-react'
 
-class DeleteBeerButton extends Component {
-  render(){
-    return(
-      <Icon name='delete'/>
-    )
-  }
+// component without state doesn't need to be a JS object of type Component
+const DeleteBeerButton = () => {
+  return(
+    <Icon name='delete'/>
+  )
 }
 
 export default DeleteBeerButton;

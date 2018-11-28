@@ -1,0 +1,68 @@
+import React, { Component } from 'react';
+import { createBrewery} from '../actions/breweryActions';
+import { updateBreweryFormData } from '../actions/breweryInput';
+import { connect } from 'react-redux';
+import { Button, FormGroup, FormControl, ControlLabel, Col, Form } from 'react-bootstrap';
+
+export class BreweryInput extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      name: '',
+    }
+  }
+
+  handleOnChange = event => {
+    const {name,value} = event.target
+    const thisBreweryData = Object.assign({}, this.props.breweryFormData, {
+      [name]: value
+    })
+    this.props.updateBreweryFormData(thisBreweryData)
+  }
+
+
+  handleOnSubmit = event => {
+    event.preventDefault();
+    this.props.createBrewery(this.props.breweryFormData, this.props.history)
+  }
+
+  render() {
+    const {name} = this.props.breweryFormData
+    return(
+      <div className="BreweryForm">
+        <h2>Add New Brewery</h2>
+        <Form horizontal onSubmit={(event) => this.handleOnSubmit(event)}>
+          <FormGroup controlId="formHorizontalEmail">
+            <Col componentClass={ControlLabel} sm={2}>
+              Name
+            </Col>
+            <Col sm={10}>
+          <FormControl
+          name="name"
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(event) => this.handleOnChange(event)}
+           />
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col smOffset={2} sm={10}>
+            <Button type="submit">Submit</Button>
+          </Col>
+        </FormGroup>
+        </Form>
+      </div>
+    );
+  }
+};
+
+const mapStateToProps = state => {
+  return {
+    breweryFormData: state.breweryFormData
+  }
+}
+
+// add arguments to connect as needed
+export default connect(mapStateToProps, { createBrewery, updateBreweryFormData })(BreweryInput);

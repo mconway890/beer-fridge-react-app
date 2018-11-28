@@ -19,10 +19,14 @@ class Breweries extends Component {
             <thead>
               <tr>
                 <th>Brewery Name</th>
+                <th>Remove</th>
+                <th>Like</th>
+                <th>Dislike</th>
+                <th>Votes</th>
               </tr>
             </thead>
 
-            {this.props && this.props.breweries.map(brewery=>
+            {this.props && this.props.breweries.map(brewery =>
             <BreweryCard
             key={brewery.id}
             likeBrewery={likeBrewery}

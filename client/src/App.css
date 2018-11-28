@@ -31,21 +31,21 @@
   }
 }
 
-div.BeersContainer {
+div.BeersContainer, div.BreweriesContainer {
   margin: auto;
     width: 70%;
     border: 3px solid black;
     padding: 10px;
 }
 
-div.BeerForm {
+div.BeerForm, div.BreweryForm {
   margin: auto;
     width: 50%;
     border: 3px solid black;
     padding: 10px;
 }
 
-div.beerShow {
+div.beerShow, div.breweryShow {
   width: 70%;
   margin: auto;
 }

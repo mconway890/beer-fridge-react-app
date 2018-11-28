@@ -61,3 +61,23 @@ Beer.create(
   abv: 4.8,
   description: 'A Gose brewed with coriander and sea salt. It features an assertive sourness delivered by lactobacillus'
 )
+
+Brewery.create(
+  name: 'Barrier Brewing Company'
+)
+
+Brewery.create(
+  name: 'Frost Beer Works'
+)
+
+Brewery.create(
+  name: 'Foothills Brewing'
+)
+
+Brewery.create(
+  name: 'Workhorse Brewing Co.'
+)
+
+Brewery.create(
+  name: 'Beartown Brewery'
+)

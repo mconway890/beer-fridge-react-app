@@ -1,8 +1,10 @@
 function beersReducer(state = [], action) {
+  // action object is exact hash being passed from dispatch
   let index;
   let beer;
 
   switch (action.type) {
+    // case returns new store
     case 'GET_BEERS':
       return action.beers;
 

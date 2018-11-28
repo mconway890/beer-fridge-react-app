@@ -7,6 +7,7 @@ import store from './store.js'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
+  // pass store object as a prop to Provider component which wraps around App Component
   <Provider store={store}>
     <App />
   </Provider>,

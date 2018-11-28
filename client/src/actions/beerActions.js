@@ -40,6 +40,7 @@ export const getBeers = () => {
     return fetch('http://localhost:3001/api/v1/beers')
     .then(response => response.json())
     .then(beers => {
+      // dispatch passed hash object with type and payload
       dispatch(setBeers(beers))
     })
     .catch(error => console.log(error));

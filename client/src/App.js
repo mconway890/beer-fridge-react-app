@@ -20,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        // App parent renders child component Navbar
         <Router>
         <div>
           <NavBar />
@@ -36,12 +37,16 @@ class App extends Component {
   }
 };
 
+// state => new store object
+// how component gets info from the store, maps to props object
 const mapStateToProps = (state) => {
   return({
     beers: state.beersReducer
   })
 }
 
+// dispatch => function - connects actions to reducers
+// how we trigger store changes and render new store object
 const mapDispatchToProps = (dispatch) => {
   return({
     getBeers: () => {
@@ -51,4 +56,6 @@ const mapDispatchToProps = (dispatch) => {
   })
 }
 
+// connects components to store
+// maps function to props object - return value of the object passed into dispatch
 export default connect(mapStateToProps, mapDispatchToProps)(App);

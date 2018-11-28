@@ -1,3 +1,4 @@
+# nesting controller to avoid breaking changes and provide backward compatibility with API
 module Api::V1
   class BeersController < ApplicationController
     before_action :set_beer, only: [:show, :update, :destroy]
@@ -33,11 +34,13 @@ module Api::V1
     end
 
     private
-
+      # Find record matching beer by id
       def set_beer
         @beer = Beer.find_by(id: params[:id])
       end
 
+      # using `fetch` can supply a default and use
+      # the Strong Parameters API from there
       def beer_params
         params.fetch(:beer, {}).permit(:id, :name, :style, :abv, :brewery, :description, :votes)
       end

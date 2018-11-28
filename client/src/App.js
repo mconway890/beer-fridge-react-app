@@ -13,6 +13,7 @@ import DisplayBeer from './containers/DisplayBeer';
 import DisplayBrewery from './containers/DisplayBrewery';
 import { connect } from 'react-redux';
 import { getBeers } from './actions/beerActions';
+import { getBreweries } from './actions/breweryActions';
 
 class App extends Component {
 
@@ -46,21 +47,22 @@ class App extends Component {
 // how component gets info from the store, maps to props object
 const mapStateToProps = (state) => {
   return({
-    beers: state.beersReducer
+    beers: state.beersReducer,
+    breweries: state.breweriesReducer
   })
 }
 
 // dispatch => function - connects actions to reducers
 // how we trigger store changes and render new store object
-const mapDispatchToProps = (dispatch) => {
-  return({
-    getBeers: () => {
-      let action = getBeers()
-      dispatch(action)
-    }
-  })
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return({
+//     getBeers: () => {
+//       let action = getBeers()
+//       dispatch(action)
+//     }
+//   })
+// }
 
 // connects components to store
 // maps function to props object - return value of the object passed into dispatch
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, {getBeers, getBreweries})(App);

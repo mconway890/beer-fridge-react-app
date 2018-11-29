@@ -20,4 +20,5 @@ class UpvoteBeer extends Component {
   }
 }
 
+// pass null as first argument to trigger action without mapStateToProps
 export default connect(null, {likeBeer})(UpvoteBeer);

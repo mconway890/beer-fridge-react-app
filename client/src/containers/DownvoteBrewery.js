@@ -19,5 +19,5 @@ class DownvoteBrewery extends Component {
     )
   }
 }
-
+// pass null as first argument to trigger action without mapStateToProps
 export default connect(null, {dislikeBrewery})(DownvoteBrewery);

@@ -4,7 +4,7 @@ import beersReducer from './reducers/beersReducer';
 import breweriesReducer from './reducers/breweriesReducer';
 import beerFormData from './reducers/beerFormData';
 import breweryFormData from './reducers/breweryFormData';
-
+//delegate different pieces of state to separate reducer functions
 const reducers = combineReducers({
   beersReducer,
   beerFormData,
@@ -14,6 +14,7 @@ const reducers = combineReducers({
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+// passing reducers to createStore, app maintains initial state
 export default createStore(
   reducers,
   composeEnhancers(applyMiddleware(thunk)),

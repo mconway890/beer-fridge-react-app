@@ -1,4 +1,4 @@
-import uuid from "uuid";
+//import uuid from "uuid";
 
 function breweriesReducer(state = [], action) {
   // action object is exact hash being passed from dispatch

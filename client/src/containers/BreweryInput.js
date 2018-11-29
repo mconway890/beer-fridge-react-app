@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Button, FormGroup, FormControl, ControlLabel, Col, Form } from 'react-bootstrap';
 
 export class BreweryInput extends Component {
+  // setting intial state done in constructor
   constructor(props){
     super(props);
     this.state = {
@@ -58,6 +59,7 @@ export class BreweryInput extends Component {
   }
 };
 
+// mapStateToProps specifies which slice of state to provide to component
 const mapStateToProps = state => {
   return {
     breweryFormData: state.breweryFormData

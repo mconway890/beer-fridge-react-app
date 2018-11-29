@@ -9,7 +9,7 @@ const DisplayBrewery= ({ brewery}) =>
       <h1>{brewery.name}</h1>
     </div>
   </div>
-
+  // mapStateToProps specifies which slice of state to provide to component
   const mapStateToProps = (state, breweryProps) => {
     // eslint-disable-next-line
     const brewery= state.breweriesReducer.find(brewery=> brewery.id == breweryProps.match.params.breweryId)

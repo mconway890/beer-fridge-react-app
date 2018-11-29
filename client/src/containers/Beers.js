@@ -44,7 +44,7 @@ class Beers extends Component {
     );
   }
 };
-
+// mapStateToProps specifies which slice of state to provide to component
 const mapStateToProps = state => {
   return { beers: state.beersReducer }
 }

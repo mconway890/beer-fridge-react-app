@@ -16,7 +16,7 @@ import { getBeers } from './actions/beerActions';
 import { getBreweries } from './actions/breweryActions';
 
 class App extends Component {
-
+// componentDidMount called after render() - sets up async process (fetching)
   componentDidMount() {
     this.props.getBeers()
   }

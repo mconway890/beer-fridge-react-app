@@ -15,6 +15,7 @@ const DisplayBeer = ({ beer }) =>
     </div>
   </div>
 
+  // mapStateToProps specifies which slice of state to provide to component
   const mapStateToProps = (state, beerProps) => {
     // eslint-disable-next-line
     const beer = state.beersReducer.find(beer => beer.id == beerProps.match.params.beerId)

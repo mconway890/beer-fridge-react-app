@@ -2,11 +2,12 @@ import React from 'react';
 import DeleteBeer from '../containers/DeleteBeer';
 import UpvoteBeer from '../containers/UpvoteBeer';
 import DownvoteBeer from '../containers/DownvoteBeer';
+import {Link} from 'react-router-dom';
 
 const BeerCard = ({beer, likeBeer, dislikeBeer, deleteBeer}) =>
 			<tbody>
 				<tr>
-					<td><a href={`beers/${beer.id}`}>{beer.name}</a></td>
+					<td><Link to={`beers/${beer.id}`}>{beer.name}</Link></td>
 					<td>{beer.style}</td>
 					<td>{beer.abv}</td>
 					<td>{beer.brewery}</td>

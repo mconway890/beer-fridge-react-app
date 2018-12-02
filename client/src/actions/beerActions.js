@@ -59,6 +59,8 @@ export const fetchBeer = (beerId) => {
 }
 
 export const createBeer = (beer) => {
+  // after e.preventDefault => createBeer action
+  //console.log('C');
   return dispatch => {
     return fetch('http://localhost:3001/api/v1/beers', {
       method: 'POST',
@@ -69,19 +71,25 @@ export const createBeer = (beer) => {
     })
     .then(response => response.json())
     .then(beer => {
+      // after fetch finished loading
+      //console.log('D');
       dispatch(addBeer(beer))
       dispatch(resetBeerForm())
     })
     .catch(error => console.log(error))
   }
+  // unreachable code
+  //console.log('E');
 }
 
 export const deleteBeer = (beerId) => {
+  //console.log('C');
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/beers/${beerId}`, {
       method: "DELETE"
     })
     .then(response => {
+      //console.log('D');
       dispatch(removeBeer(beerId))
     })
     .catch(error => console.log(error))

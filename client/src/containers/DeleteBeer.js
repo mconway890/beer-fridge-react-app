@@ -6,7 +6,9 @@ import DeleteBeerButton from '../components/DeleteBeerButton';
 class DeleteBeer extends Component {
 
   handleClick = () => {
+    //console.log('A');
     this.props.deleteBeer(this.props.beer.id, this.props.history)
+    //console.log('B');
   }
 
   render() {

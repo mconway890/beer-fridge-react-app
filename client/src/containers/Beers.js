@@ -4,6 +4,8 @@ import '../App.css';
 import BeerCard from '../components/BeerCard';
 import { deleteBeer, likeBeer, dislikeBeer, getBeers } from '../actions/beerActions';
 import {Table} from 'react-bootstrap';
+import { Button,Modal } from 'semantic-ui-react'
+import BeerInput from './BeerInput'
 
 class Beers extends Component {
 
@@ -14,6 +16,12 @@ class Beers extends Component {
       <div>
         <div className="BeersContainer">
           <h1 className="beerName">Beers</h1>
+          <Modal trigger={<Button>Add Beer</Button>} centered={false}>
+          <Modal.Header>Add New Beer</Modal.Header>
+          <Modal.Content image>
+            <BeerInput />
+          </Modal.Content>
+          </Modal>
           <div>
             <Table striped bordered condensed hover>
             <thead>

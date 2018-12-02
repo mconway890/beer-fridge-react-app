@@ -54,3 +54,12 @@ div.card-header {
   font-weight: bold;
   font-size: 20px
 }
+
+button.ui.button {
+  float: right;
+}
+
+h1.beerName {
+  float: left;
+  
+}

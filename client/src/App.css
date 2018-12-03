@@ -31,13 +31,6 @@
   }
 }
 
-div.BeersContainer, div.BreweriesContainer {
-  margin: auto;
-  width: 70%;
-  padding: 10px;
-  border-radius: 7px;
-}
-
 div.BeerForm, div.BreweryForm {
   margin: auto;
   width: 50%;
@@ -63,10 +56,33 @@ h1.beerName, h1.breweryName {
   float: left;
 }
 
-div.ui.labeled.icon.menu {
-  border: none;
+div.header {
+  text-align: center;
 }
 
-div.header {
+div.App {
+  margin: auto;
+  width: 50%;
+}
+
+button {
+  padding-top: 2px;
+}
+
+div.ui.borderless.fluid.five.item.menu {
+  border: none;
+  background-color: #4183c4;
+}
+
+div.ui.borderless.fluid.five.item.menu a.active.item {
+  font-weight: bolder;
+}
+
+div.ui.borderless.fluid.five.item.menu a.item {
+  font-size: 1.2em;
+  color: white;
+}
+
+th {
   text-align: center;
 }

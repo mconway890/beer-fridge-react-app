@@ -12,7 +12,7 @@ export default class MenuExampleLabeledIconsVertical extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu icon='labeled' horizontal="true">
+      <Menu borderless horizontal="true" fluid widths={5}>
         <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} as={Link} to='/'>
           Beer
           <br></br>

@@ -11,12 +11,14 @@ export default class MenuExampleLabeledIconsVertical extends Component {
   render() {
     const { activeItem } = this.state
 
+    const menuHeader = {
+      textAlign: 'left',
+    };
+
     return (
-      <Menu borderless horizontal="true" fluid widths={5}>
-        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} as={Link} to='/'>
-          Beer
-          <br></br>
-          Fridge
+      <Menu pointing secondary fluid widths={5}>
+        <Menu.Item header name='home' style={menuHeader} onClick={this.handleItemClick} as={Link} to='/'>
+          Beer<br></br>Fridge
         </Menu.Item>
 
         <Menu.Item

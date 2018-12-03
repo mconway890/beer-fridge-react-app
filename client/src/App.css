@@ -72,6 +72,7 @@ button {
 div.ui.borderless.fluid.five.item.menu {
   border: none;
   background-color: #4183c4;
+  border-radius: 0px;
 }
 
 div.ui.borderless.fluid.five.item.menu a.active.item {

@@ -59,7 +59,7 @@ button.ui.button {
   float: right;
 }
 
-h1.beerName {
+h1.beerName, h1.breweryName {
   float: left;
 }
 

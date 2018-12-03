@@ -31,7 +31,6 @@ export class BreweryInput extends Component {
     const {name} = this.props.breweryFormData
     return(
       <div className="BreweryForm">
-        <h2>Add New Brewery</h2>
         <Form horizontal onSubmit={(event) => this.handleOnSubmit(event)}>
           <FormGroup controlId="formHorizontalEmail">
             <Col componentClass={ControlLabel} sm={2}>

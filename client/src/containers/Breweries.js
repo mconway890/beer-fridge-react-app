@@ -16,7 +16,7 @@ class Breweries extends Component {
       <div>
         <div className="BreweriesContainer">
           <h1 className="breweryName">Breweries</h1>
-          <Modal trigger={<Button>Add New Brewery</Button>} centered={false}>
+          <Modal trigger={<Button size='mini'>Add Brewery</Button>} centered={false}>
           <Modal.Header>Add New Brewery</Modal.Header>
           <Modal.Content image>
             <BreweryInput />

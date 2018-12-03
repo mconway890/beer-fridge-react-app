@@ -16,7 +16,7 @@ class Beers extends Component {
       <div>
         <div className="BeersContainer">
           <h1 className="beerName">Beers</h1>
-          <Modal trigger={<Button>Add Beer</Button>} centered={false}>
+          <Modal trigger={<Button size='mini'>Add Beer</Button>} centered={false}>
           <Modal.Header>Add New Beer</Modal.Header>
           <Modal.Content image>
             <BeerInput />

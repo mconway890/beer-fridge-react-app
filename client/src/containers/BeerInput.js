@@ -99,13 +99,13 @@ export class BeerInput extends Component {
 
         <FormGroup controlId="formHorizontalPassword">
           <Col componentClass={ControlLabel} sm={2}>
-            Description
+            Details
             </Col>
             <Col sm={10}>
           <FormControl
           name="description"
           type="text"
-          placeholder="Description"
+          placeholder="Details"
           value={description}
           onChange={(event) => this.handleOnChange(event)}
            />

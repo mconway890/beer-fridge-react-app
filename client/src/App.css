@@ -36,6 +36,7 @@ div.BeersContainer, div.BreweriesContainer {
     width: 70%;
     border: 3px solid black;
     padding: 10px;
+    border-radius: 7px;
 }
 
 div.BeerForm, div.BreweryForm {
@@ -43,6 +44,7 @@ div.BeerForm, div.BreweryForm {
     width: 50%;
     border: 3px solid black;
     padding: 10px;
+    border-radius: 7px;
 }
 
 div.beerShow, div.breweryShow {
@@ -65,4 +67,8 @@ h1.beerName, h1.breweryName {
 
 div.ui.labeled.icon.menu {
   border: none;
+}
+
+div.header {
+  text-align: center;
 }

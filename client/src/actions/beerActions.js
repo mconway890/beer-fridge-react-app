@@ -74,6 +74,7 @@ export const createBeer = (beer) => {
       // after fetch finished loading
       //console.log('D');
       dispatch(addBeer(beer))
+      alert('Beer added successfully!')
       dispatch(resetBeerForm())
     })
     .catch(error => console.log(error))

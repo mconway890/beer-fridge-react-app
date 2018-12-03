@@ -61,5 +61,8 @@ button.ui.button {
 
 h1.beerName {
   float: left;
-  
+}
+
+div.ui.labeled.icon.menu {
+  border: none;
 }

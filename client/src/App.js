@@ -18,6 +18,7 @@ import { getBreweries } from './actions/breweryActions';
 class App extends Component {
 // componentDidMount called after render() - sets up async process (fetching)
   componentDidMount() {
+    this.props.getBreweries()
     this.props.getBeers()
   }
 // App parent renders child component Navbar

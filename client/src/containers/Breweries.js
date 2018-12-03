@@ -4,6 +4,8 @@ import '../App.css';
 import BreweryCard from '../components/BreweryCard';
 import { deleteBrewery, likeBrewery, dislikeBrewery, getBreweries } from '../actions/breweryActions';
 import {Table} from 'react-bootstrap';
+import { Button,Modal } from 'semantic-ui-react';
+import BreweryInput from './BreweryInput';
 
 class Breweries extends Component {
 
@@ -14,6 +16,12 @@ class Breweries extends Component {
       <div>
         <div className="BreweriesContainer">
           <h1 className="breweryName">Breweries</h1>
+          <Modal trigger={<Button>Add New Brewery</Button>} centered={false}>
+          <Modal.Header>Add New Brewery</Modal.Header>
+          <Modal.Content image>
+            <BreweryInput />
+          </Modal.Content>
+          </Modal>
           <div>
             <Table striped bordered condensed hover>
             <thead>

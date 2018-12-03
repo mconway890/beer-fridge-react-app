@@ -8,7 +8,7 @@ function breweriesReducer(state = [], action) {
   switch (action.type) {
     // case returns new store
     case 'GET_BREWERIES':
-      return action.brewerys;
+      return action.breweries;
 
     case "ADD_BREWERY":
       return [...state, action.brewery];

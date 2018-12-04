@@ -1,6 +1,7 @@
 module Api::V1
   class BreweriesController < ApplicationController
-    before_action :set_brewery, only: [:show, :update, :destroy]
+    before_action :set_brewery, only: [:show, :increase, :decrease, :destroy]
+    # use increase and decrease as methods/routes instead of update containing both sides of logic
 
     def index
       @breweries = Brewery.all
@@ -24,9 +25,27 @@ module Api::V1
       @brewery.destroy
     end
 
-    def update
-      if @brewery.update(brewery_params)
+    def increase
+      # increment the votes value by 1
+      @brewery.votes += 1
+      # save new votes value
+      if @brewery.save
+      # if brewerysaves, render json
         render json: @brewery
+      # else render error
+      else
+        render( status: 400, json: {error: "Could Not Update."})
+      end
+    end
+
+    def decrease
+      # decrement the votes value by 1
+      @brewery.votes -= 1
+      # save new votes value
+      if @brewery.save
+      # if brewerysaves, render json
+        render json: @brewery
+      # else render error
       else
         render( status: 400, json: {error: "Could Not Update."})
       end

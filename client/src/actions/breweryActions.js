@@ -67,9 +67,11 @@ export const createBrewery = (brewery) => {
       },
       body: JSON.stringify({brewery: brewery})
     })
+    // Load it as json
     .then(response => response.json())
     .then(brewery=> {
       dispatch(addBrewery(brewery))
+      alert('Brewery added successfully!')
       dispatch(resetBreweryForm())
     })
     .catch(error => console.log(error))

@@ -92,7 +92,8 @@ export const deleteBrewery= (breweryId) => {
 
 export const likeBrewery = (breweryId) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/breweries/${breweryId}`, {
+    // fetch requests url route to increase method in breweries controller
+    return fetch(`http://localhost:3001/api/v1/breweries/${breweryId}/increase`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -110,7 +111,8 @@ export const likeBrewery = (breweryId) => {
 
 export const dislikeBrewery = (breweryId) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/breweries/${breweryId}`, {
+    // fetch requests url route to decrease method in breweries controller
+    return fetch(`http://localhost:3001/api/v1/breweries/${breweryId}/decrease`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

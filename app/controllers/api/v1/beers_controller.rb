@@ -1,7 +1,8 @@
 # nesting controller to avoid breaking changes and provide backward compatibility with API
 module Api::V1
   class BeersController < ApplicationController
-    before_action :set_beer, only: [:show, :update, :destroy]
+    before_action :set_beer, only: [:show, :increase, :decrease, :destroy]
+    # use increase and decrease as methods/routes instead of update containing both sides of logic
 
     def index
       @beers = Beer.all
@@ -25,9 +26,27 @@ module Api::V1
       @beer.destroy
     end
 
-    def update
-      if @beer.update(beer_params)
+    def increase
+      # increment the votes value by 1
+      @beer.votes += 1
+      # save new votes value
+      if @beer.save
+      # if beer saves, render json
         render json: @beer
+      # else render error
+      else
+        render( status: 400, json: {error: "Could Not Update."})
+      end
+    end
+
+    def decrease
+      # decrement the votes value by 1
+      @beer.votes -= 1
+      # save new votes value
+      if @beer.save
+      # if beer saves, render json
+        render json: @beer
+      # else render error
       else
         render( status: 400, json: {error: "Could Not Update."})
       end

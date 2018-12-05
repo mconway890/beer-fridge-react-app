@@ -13,15 +13,15 @@ function breweriesReducer(state = [], action) {
     case "ADD_BREWERY":
       return [...state, action.brewery];
 
-    case "ADD_BEER":
-      let existingBrewery = state.filter(
-        brewery => brewery.brewery === action.beer.brewery
-      );
-      if (existingBrewery.length > 0) {
-        return state;
-      } else {
-        return [...state, { brewery: action.beer.brewery, id: uuid() }];
-      }
+    // case "ADD_BEER":
+    //   let existingBrewery = state.filter(
+    //     brewery => brewery.brewery === action.beer.brewery
+    //   );
+    //   if (existingBrewery.length > 0) {
+    //     return state;
+    //   } else {
+    //     return [...state, { brewery: action.beer.brewery, id: uuid() }];
+    //   }
 
     case "REMOVE_BREWERY":
       return state.filter(brewery=> brewery.id !== action.breweryId);

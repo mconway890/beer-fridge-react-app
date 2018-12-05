@@ -60,7 +60,7 @@ module Api::V1
       # using `fetch` can supply a default and use
       # the Strong Parameters API from there
       def brewery_params
-        params.fetch(:brewery, {}).permit(:id, :name)
+        params.fetch(:brewery, {}).permit(:id, :name, :review)
       end
   end
 end

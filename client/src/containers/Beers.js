@@ -6,6 +6,7 @@ import { deleteBeer, likeBeer, dislikeBeer, getBeers } from '../actions/beerActi
 import {Table} from 'react-bootstrap';
 import { Button,Modal } from 'semantic-ui-react'
 import BeerInput from './BeerInput'
+import {Link} from 'react-router-dom';
 
 class Beers extends Component {
 
@@ -16,7 +17,7 @@ class Beers extends Component {
       <div>
         <div className="BeersContainer">
           <h1 className="beerName">Beers</h1>
-          <Modal trigger={<Button size='mini'>Add Beer</Button>} centered={false}>
+          <Modal trigger={<Button className="styledButton" size='mini'>Add Beer</Button>} centered={false}>
           <Modal.Header>Add New Beer</Modal.Header>
           <Modal.Content image>
             <BeerInput />

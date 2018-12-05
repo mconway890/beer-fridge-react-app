@@ -87,3 +87,28 @@ div.ui.borderless.fluid.five.item.menu a.item {
 th {
   text-align: center;
 }
+
+button.ui.mini.button.styledButton {
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid #000000a6;
+  color: #000000a6;
+  margin: 0.5em 1em;
+  padding: 0.25em 1em;
+}
+
+i.delete.icon {
+  color: #b50909;
+}
+
+i.thumbs.up.icon {
+  color: #4585c5;
+}
+
+i.thumbs.down.icon {
+  color: #8f8f8f;
+}
+
+td {
+  font-weight: bolder;
+}

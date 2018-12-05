@@ -5,7 +5,7 @@ module Api::V1
     # use increase and decrease as methods/routes instead of update containing both sides of logic
 
     def index
-      @beers = Beer.all
+      @beers = Beer.all.order(:name)
       render json: @beers
     end
 

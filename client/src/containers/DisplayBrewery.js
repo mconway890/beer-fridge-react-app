@@ -7,6 +7,7 @@ const DisplayBrewery= ({ brewery}) =>
   <div className="displayBrewery">
     <div className="breweryShow">
       <h1>{brewery.name}</h1>
+      <p>{brewery.review}</p>
     </div>
   </div>
   // mapStateToProps specifies which slice of state to provide to component

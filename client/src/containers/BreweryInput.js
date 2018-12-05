@@ -10,6 +10,7 @@ export class BreweryInput extends Component {
     super(props);
     this.state = {
       name: '',
+      review: '',
     }
   }
 
@@ -28,7 +29,7 @@ export class BreweryInput extends Component {
   }
 
   render() {
-    const {name} = this.props.breweryFormData
+    const {name,review} = this.props.breweryFormData
     return(
       <div className="BreweryForm">
         <Form horizontal onSubmit={(event) => this.handleOnSubmit(event)}>
@@ -46,6 +47,21 @@ export class BreweryInput extends Component {
            />
           </Col>
         </FormGroup>
+
+        <FormGroup controlId="formHorizontalEmail">
+          <Col componentClass={ControlLabel} sm={2}>
+            Review
+          </Col>
+          <Col sm={10}>
+        <FormControl
+        name="review"
+        type="text"
+        placeholder="Review"
+        value={review}
+        onChange={(event) => this.handleOnChange(event)}
+         />
+        </Col>
+      </FormGroup>
 
         <FormGroup>
           <Col smOffset={2} sm={10}>

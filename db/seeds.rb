@@ -63,21 +63,26 @@ Beer.create(
 )
 
 Brewery.create(
-  name: 'Barrier Brewing Company'
+  name: 'Barrier Brewing Company',
+  review: "They have some great beers and the staff that work the tasting room are great."
 )
 
 Brewery.create(
-  name: 'Frost Beer Works'
+  name: 'Frost Beer Works',
+  review: 'Counter staff is friendly and knowledgeable.'
 )
 
 Brewery.create(
-  name: 'Foothills Brewing'
+  name: 'Foothills Brewing',
+  review: 'Delicious beer, good food trucks, great staff, kid friendly, and good people.'
 )
 
 Brewery.create(
-  name: 'Workhorse Brewing Co.'
+  name: 'Workhorse Brewing Co.',
+  review: 'Beautiful space, solid approachable beer, reasonably priced.'
 )
 
 Brewery.create(
-  name: 'Beartown Brewery'
+  name: 'Beartown Brewery',
+  review: 'The Beartown tap was equally impressive with the best beer garden I’ve ever seen!'
 )

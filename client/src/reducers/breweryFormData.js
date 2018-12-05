@@ -1,5 +1,6 @@
 const initialState = {
   name: '',
+  review: '',
 }
 
 export default (state = initialState, action) => {

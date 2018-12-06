@@ -13,6 +13,7 @@ export default class MenuExampleLabeledIconsVertical extends Component {
 
     const menuHeader = {
       textAlign: 'left',
+      backgroundColor: '#ffcc01',
     };
 
     return (

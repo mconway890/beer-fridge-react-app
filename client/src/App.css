@@ -112,3 +112,8 @@ i.thumbs.down.icon {
 td {
   font-weight: bolder;
 }
+
+td.tableData {
+  color: #4183c4;
+  font-weight: lighter;
+}

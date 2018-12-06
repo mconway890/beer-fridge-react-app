@@ -1,5 +1,3 @@
-import uuid from "uuid";
-
 function breweriesReducer(state = [], action) {
   // action object is exact hash being passed from dispatch
   let index;

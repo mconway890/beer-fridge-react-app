@@ -6,7 +6,6 @@ import { deleteBeer, likeBeer, dislikeBeer, getBeers } from '../actions/beerActi
 import {Table} from 'react-bootstrap';
 import { Button,Modal } from 'semantic-ui-react'
 import BeerInput from './BeerInput'
-import {Link} from 'react-router-dom';
 
 class Beers extends Component {
 

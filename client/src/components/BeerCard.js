@@ -7,14 +7,14 @@ import {Link} from 'react-router-dom';
 const BeerCard = ({beer, likeBeer, dislikeBeer, deleteBeer}) =>
 			<tbody>
 				<tr>
-					<td><Link to={`beers/${beer.id}`}>{beer.name}</Link></td>
+					<td className="tableData"><Link to={`beers/${beer.id}`}>{beer.name}</Link></td>
 					<td>{beer.style}</td>
 					<td>{beer.abv}</td>
 					<td>{beer.brewery}</td>
 					<td><DeleteBeer history={beer.history} beer={beer}/></td>
 					<td><UpvoteBeer history={beer.history} beer={beer}/></td>
 					<td><DownvoteBeer history={beer.history} beer={beer}/></td>
-					<td>{beer.votes}</td>
+					<td className="tableData">{beer.votes}</td>
 				</tr>
 				</tbody>
 

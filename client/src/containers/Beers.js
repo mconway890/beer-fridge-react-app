@@ -10,12 +10,17 @@ import BeerInput from './BeerInput'
 class Beers extends Component {
 
   render() {
-    //const beers = this.props
+    const {beers} = this.props
+    const sortedBeers = beers.sort(function(a,b) {
+      return a.votes - b.votes;
+    })
+
 
     return (
       <div>
         <div className="BeersContainer">
           <h1 className="beerName">Beers</h1>
+          <Button onClick={this.handleClick} className="styledButton" size='mini'>Sort By Votes</Button>
           <Modal trigger={<Button className="styledButton" size='mini'>Add Beer</Button>} centered={false}>
           <Modal.Header>Add New Beer</Modal.Header>
           <Modal.Content image>

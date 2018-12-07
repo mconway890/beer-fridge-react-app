@@ -106,6 +106,7 @@ export const likeBeer = (beerId) => {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
+      // JSON.stringify converts JS value to JSON string
       body: JSON.stringify(beerId)
     })
     .then(response => response.json())

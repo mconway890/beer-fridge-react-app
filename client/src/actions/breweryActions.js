@@ -65,6 +65,7 @@ export const createBrewery = (brewery) => {
       headers: {
         'Content-Type': 'application/json'
       },
+      // JSON.stringify converts JS value to JSON string
       body: JSON.stringify({brewery: brewery})
     })
     // Load it as json

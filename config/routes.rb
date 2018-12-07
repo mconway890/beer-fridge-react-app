@@ -12,6 +12,6 @@ Rails.application.routes.draw do
 end
 
 # only route to index and show so update method isn't looked for in controller
-# update method replaced with increase and decrease
+# update method/route replaced with increase and decrease
 # patch request made to increase route in order to update vote count by 1
 # patch request made to decrease route in order to update vote count down by 1

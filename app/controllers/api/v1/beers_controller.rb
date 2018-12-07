@@ -3,6 +3,7 @@ module Api::V1
   class BeersController < ApplicationController
     before_action :set_beer, only: [:show, :increase, :decrease, :destroy]
     # use increase and decrease as methods/routes instead of update containing both sides of logic
+    # clicking like or dislike button will make fetch request to url '/increase' or '/decrease'
 
     def index
       @beers = Beer.all.order(:name)
@@ -26,6 +27,8 @@ module Api::V1
       @beer.destroy
     end
 
+    # create two methods that will handle increasing and decreasing votes
+    # use increase and decrease methods as routes for when button is clicked
     def increase
       # increment the votes value by 1
       @beer.votes += 1

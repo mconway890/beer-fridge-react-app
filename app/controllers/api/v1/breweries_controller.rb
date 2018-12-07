@@ -2,6 +2,7 @@ module Api::V1
   class BreweriesController < ApplicationController
     before_action :set_brewery, only: [:show, :increase, :decrease, :destroy]
     # use increase and decrease as methods/routes instead of update containing both sides of logic
+    # clicking like or dislike button will make fetch request to url '/increase' or '/decrease'
 
     def index
       @breweries = Brewery.all
@@ -25,12 +26,14 @@ module Api::V1
       @brewery.destroy
     end
 
+    # create two methods that will handle increasing and decreasing votes
+    # use increase and decrease methods as routes for when button is clicked
     def increase
       # increment the votes value by 1
       @brewery.votes += 1
       # save new votes value
       if @brewery.save
-      # if brewerysaves, render json
+      # if brewery saves, render json
         render json: @brewery
       # else render error
       else

@@ -11,9 +11,9 @@ const BeerCard = ({beer, likeBeer, dislikeBeer, deleteBeer}) =>
 					<td>{beer.style}</td>
 					<td>{beer.abv}</td>
 					<td>{beer.brewery}</td>
-					<td><DeleteBeer history={beer.history} beer={beer}/></td>
-					<td><UpvoteBeer history={beer.history} beer={beer}/></td>
-					<td><DownvoteBeer history={beer.history} beer={beer}/></td>
+					<td><DeleteBeer beer={beer}/></td>
+					<td><UpvoteBeer beer={beer}/></td>
+					<td><DownvoteBeer beer={beer}/></td>
 					<td className="tableData">{beer.votes}</td>
 				</tr>
 				</tbody>

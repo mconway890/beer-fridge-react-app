@@ -6,7 +6,7 @@ import DownvoteBeerButton from '../components/DownvoteBeerButton';
 class DownvoteBeer extends Component {
 
   handleClick = () => {
-    this.props.dislikeBeer(this.props.beer.id, this.props.history)
+    this.props.dislikeBeer(this.props.beer.id)
   }
 
   render() {

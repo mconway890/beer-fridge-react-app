@@ -28,7 +28,7 @@ export class BeerInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.createBeer(this.props.beerFormData, this.props.history)
+    this.props.createBeer(this.props.beerFormData)
   }
 
   render() {

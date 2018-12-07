@@ -6,7 +6,7 @@ import UpvoteBeerButton from '../components/UpvoteBeerButton';
 class UpvoteBeer extends Component {
 
   handleClick = () => {
-    this.props.likeBeer(this.props.beer.id, this.props.history)
+    this.props.likeBeer(this.props.beer.id)
   }
 
   render() {

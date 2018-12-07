@@ -25,7 +25,7 @@ export class BreweryInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.createBrewery(this.props.breweryFormData, this.props.history)
+    this.props.createBrewery(this.props.breweryFormData)
   }
 
   render() {

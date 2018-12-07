@@ -6,7 +6,7 @@ import DeleteBreweryButton from '../components/DeleteBreweryButton';
 class DeleteBrewery extends Component {
 
   handleClick = () => {
-    this.props.deleteBrewery(this.props.brewery.id, this.props.history)
+    this.props.deleteBrewery(this.props.brewery.id)
   }
 
   render() {

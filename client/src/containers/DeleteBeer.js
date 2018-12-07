@@ -7,7 +7,7 @@ class DeleteBeer extends Component {
 
   handleClick = () => {
     //console.log('A');
-    this.props.deleteBeer(this.props.beer.id, this.props.history)
+    this.props.deleteBeer(this.props.beer.id)
     //console.log('B');
   }
 

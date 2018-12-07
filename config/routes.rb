@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   	end
   end
 
+  # use patch routes to update specific beer or brewery when like/dislike is clicked
   patch '/api/v1/beers/:id/increase', to: 'api/v1/beers#increase'
   patch '/api/v1/beers/:id/decrease', to: 'api/v1/beers#decrease'
   patch '/api/v1/breweries/:id/increase', to: 'api/v1/breweries#increase'

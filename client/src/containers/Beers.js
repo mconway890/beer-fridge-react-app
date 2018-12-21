@@ -61,8 +61,8 @@ class Beers extends Component {
       <div>
         <div className="BeersContainer">
           <h1 className="beerName">Beers</h1>
-          <Button onClick={this.sortAscending} className="styledButton" size='mini'>Sort Votes</Button>
-          <Button onClick={this.sortDescending} className="styledButton" size='mini'>Sort Votes</Button>
+          <Button onClick={this.sortAscending} className="styledButton" size='mini'>Sort ASC</Button>
+          <Button onClick={this.sortDescending} className="styledButton" size='mini'>Sort DESC</Button>
           <Modal trigger={<Button className="styledButton" size='mini'>Add Beer</Button>} centered={false}>
           <Modal.Header>Add New Beer</Modal.Header>
           <Modal.Content image>

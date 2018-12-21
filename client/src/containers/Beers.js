@@ -31,7 +31,7 @@ class Beers extends Component {
     beers.sort(function (a,b) {
       return a.votes - b.votes
     })
-    this.setState({ beers })
+    this.setState({ beers, hasBeenClicked:true })
   }
 
   sortDescending = () => {
@@ -39,7 +39,7 @@ class Beers extends Component {
     beers.sort(function (a,b) {
       return b.votes - a.votes
     })
-    this.setState({ beers })
+    this.setState({ beers, hasBeenClicked:true })
   }
 
   handleClick = (beers) => {
@@ -56,47 +56,87 @@ class Beers extends Component {
   }
 
   render() {
+    if (this.state.hasBeenClicked){
+      return (
+        <div>
+          <div className="BeersContainer">
+            <h1 className="beerName">Beers</h1>
+            <Button onClick={this.sortAscending} className="styledButton" size='mini'>Sort ASC</Button>
+            <Modal trigger={<Button className="styledButton" size='mini'>Add Beer</Button>} centered={false}>
+            <Modal.Header>Add New Beer</Modal.Header>
+            <Modal.Content image>
+              <BeerInput />
+            </Modal.Content>
+            </Modal>
+            <div>
+              <Table striped bordered condensed hover>
+              <thead>
+                <tr>
+                  <th>Beer Name</th>
+                  <th>Style</th>
+                  <th>ABV</th>
+                  <th>Brewery</th>
+                  <th>Remove</th>
+                  <th>Like</th>
+                  <th>Dislike</th>
+                  <th>Votes</th>
+                </tr>
+              </thead>
 
-    return (
-      <div>
-        <div className="BeersContainer">
-          <h1 className="beerName">Beers</h1>
-          <Button onClick={this.sortAscending} className="styledButton" size='mini'>Sort ASC</Button>
-          <Button onClick={this.sortDescending} className="styledButton" size='mini'>Sort DESC</Button>
-          <Modal trigger={<Button className="styledButton" size='mini'>Add Beer</Button>} centered={false}>
-          <Modal.Header>Add New Beer</Modal.Header>
-          <Modal.Content image>
-            <BeerInput />
-          </Modal.Content>
-          </Modal>
-          <div>
-            <Table striped bordered condensed hover>
-            <thead>
-              <tr>
-                <th>Beer Name</th>
-                <th>Style</th>
-                <th>ABV</th>
-                <th>Brewery</th>
-                <th>Remove</th>
-                <th>Like</th>
-                <th>Dislike</th>
-                <th>Votes</th>
-              </tr>
-            </thead>
-
-            {this.props && this.state.beers.map(beer =>
-            <BeerCard
-            key={beer.id}
-            likeBeer={likeBeer}
-            dislikeBeer={dislikeBeer}
-            deleteBeer={deleteBeer}
-            beer={beer}
-             /> )}
-            </Table>
+              {this.props && this.state.beers.map(beer =>
+              <BeerCard
+              key={beer.id}
+              likeBeer={likeBeer}
+              dislikeBeer={dislikeBeer}
+              deleteBeer={deleteBeer}
+              beer={beer}
+               /> )}
+              </Table>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div>
+          <div className="BeersContainer">
+            <h1 className="beerName">Beers</h1>
+            <Button onClick={this.sortDescending} className="styledButton" size='mini'>Sort DESC</Button>
+            <Modal trigger={<Button className="styledButton" size='mini'>Add Beer</Button>} centered={false}>
+            <Modal.Header>Add New Beer</Modal.Header>
+            <Modal.Content image>
+              <BeerInput />
+            </Modal.Content>
+            </Modal>
+            <div>
+              <Table striped bordered condensed hover>
+              <thead>
+                <tr>
+                  <th>Beer Name</th>
+                  <th>Style</th>
+                  <th>ABV</th>
+                  <th>Brewery</th>
+                  <th>Remove</th>
+                  <th>Like</th>
+                  <th>Dislike</th>
+                  <th>Votes</th>
+                </tr>
+              </thead>
+
+              {this.props && this.state.beers.map(beer =>
+              <BeerCard
+              key={beer.id}
+              likeBeer={likeBeer}
+              dislikeBeer={dislikeBeer}
+              deleteBeer={deleteBeer}
+              beer={beer}
+               /> )}
+              </Table>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 };
 // mapStateToProps specifies which slice of state to provide to component

@@ -34,7 +34,7 @@ class Breweries extends Component {
               </tr>
             </thead>
 
-            {this.props && this.props.breweries.map(brewery =>
+            {this.props.breweries.map(brewery =>
             <BreweryCard
             key={brewery.id}
             likeBrewery={likeBrewery}

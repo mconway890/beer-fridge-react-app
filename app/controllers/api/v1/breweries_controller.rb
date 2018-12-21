@@ -5,7 +5,7 @@ module Api::V1
     # clicking like or dislike button will make fetch request to url '/increase' or '/decrease'
 
     def index
-      @breweries = Brewery.all
+      @breweries = Brewery.all.order(:name)
       render json: @breweries
     end
 

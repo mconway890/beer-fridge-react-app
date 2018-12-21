@@ -8,13 +8,39 @@ import { Button,Modal } from 'semantic-ui-react'
 import BeerInput from './BeerInput'
 
 class Beers extends Component {
+  constructor(props) {
+    super(props);
+
+    // Define the initial state:
+    this.state = {
+      beers: [],
+      hasBeenClicked: false
+    };
+  }
+
+  componentWillReceiveProps(props){
+    if (props.beers.length > 0) {
+      this.setState({
+        beers: props.beers
+      })
+    }
+  }
+
+  handleClick = (beers) => {
+    // Update state here
+    //debugger;
+    const sortedBeers = this.state.beers.sort(function (a,b) {
+      return b.votes - a.votes
+    })
+    console.log(sortedBeers)
+    this.setState({
+      beers: sortedBeers,
+      hasBeenClicked: true
+    })
+  }
 
   render() {
     const {beers} = this.props
-    const sortedBeers = beers.sort(function(a,b) {
-      return a.votes - b.votes;
-    })
-
 
     return (
       <div>
@@ -42,7 +68,7 @@ class Beers extends Component {
               </tr>
             </thead>
 
-            {this.props && this.props.beers.map(beer =>
+            {this.props && this.state.beers.map(beer =>
             <BeerCard
             key={beer.id}
             likeBeer={likeBeer}

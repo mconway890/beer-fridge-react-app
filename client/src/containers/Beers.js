@@ -26,6 +26,22 @@ class Beers extends Component {
     }
   }
 
+  sortAscending = () => {
+    const { beers } = this.state;
+    beers.sort(function (a,b) {
+      return a.votes - b.votes
+    })
+    this.setState({ beers })
+  }
+
+  sortDescending = () => {
+    const { beers } = this.state;
+    beers.sort(function (a,b) {
+      return b.votes - a.votes
+    })
+    this.setState({ beers })
+  }
+
   handleClick = (beers) => {
     // Update state here
     //debugger;
@@ -40,13 +56,13 @@ class Beers extends Component {
   }
 
   render() {
-    const {beers} = this.props
 
     return (
       <div>
         <div className="BeersContainer">
           <h1 className="beerName">Beers</h1>
-          <Button onClick={this.handleClick} className="styledButton" size='mini'>Sort By Votes</Button>
+          <Button onClick={this.sortAscending} className="styledButton" size='mini'>Sort Votes</Button>
+          <Button onClick={this.sortDescending} className="styledButton" size='mini'>Sort Votes</Button>
           <Modal trigger={<Button className="styledButton" size='mini'>Add Beer</Button>} centered={false}>
           <Modal.Header>Add New Beer</Modal.Header>
           <Modal.Content image>

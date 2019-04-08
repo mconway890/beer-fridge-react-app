@@ -117,3 +117,7 @@ td.tableData {
   color: #4183c4;
   font-weight: lighter;
 }
+
+.displayBeer, .displayBrewery {
+  padding-top: 40px;
+}
